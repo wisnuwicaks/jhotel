@@ -2,14 +2,15 @@
 /**
  * Write a description of class DatabaseCustomer here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Wisnu Wicaksono
+ * @version 1 Maret 2018
  */
 
     public class DatabaseCustomer
     {
         private String[] list_customer;
-        public boolean addCustomer (Customer baru)
+        
+        public boolean addCustomer(Customer baru)
         {
             return false;
         }
@@ -20,7 +21,7 @@
         
         public String[] getCustomerDatabase()
         {
-            return list_customer;
+            return null;
         }
     }
     

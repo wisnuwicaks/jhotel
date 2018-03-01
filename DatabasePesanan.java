@@ -2,8 +2,8 @@
 /**
  * Write a description of class DatabasePesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Wisnu Wicaksono
+ * @version 1 Maret 2018
  */
 public class DatabasePesanan
 {
@@ -21,11 +21,16 @@ public class DatabasePesanan
     
     public Pesanan getPesanan(Customer cust)
     {
-        Pesanan pesan = new Pesanan();
-        return pesan;
+        return null;
+    }
+    
+    public String[] getPesananDatabase ()
+    {
+        return null;
     }
     
     public void pesananDibatalkan(Pesanan pesan)
     {
+        
     }
 }

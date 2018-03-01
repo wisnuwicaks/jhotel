@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Lokasi
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Lokasi\ here.\r\n\r\n\ @author\ Wisnu\ Wicaksono\r\n\ @version\ 1\ Maret\ 2018\r\n
+comment1.params=x_coord\ y_coord\ deskripsiLokasi
+comment1.target=Lokasi(float,\ float,\ java.lang.String)
+comment2.params=
+comment2.target=float\ getX()
+comment2.text=\r\n\ Metode\ getX\ untuk\ mendapatkan\ nilai\ koordinat\ X\r\n
+comment3.params=
+comment3.target=float\ getY()
+comment3.text=\r\n\ Metode\ getY\ untuk\ mendapatkan\ nilai\ koordinat\ Y\r\n
+comment4.params=
+comment4.target=java.lang.String\ getDeskripsi()
+comment4.text=\r\n\ Metode\ getDiskripsi\ untuk\ menampilkan\ deskripsi\ lokasi\r\n\ @return\ mengembalikan\ nilai\ ke\ variable\ deskripsiLokasi\r\n
+comment5.params=x_coord
+comment5.target=void\ setX(float)
+comment5.text=\r\n\ Metode\ setX\ untuk\ mengeset\ nilai\ koordinat\ X\r\n
+comment6.params=y_coord
+comment6.target=void\ setY(float)
+comment6.text=\r\n\ Metode\ setY\ untuk\ mengeset\ nilai\ koordinat\ Y\r\n
+comment7.params=deskripsi
+comment7.target=void\ setDeskripsi(java.lang.String)
+comment7.text=\r\n\ Metode\ setDeskripsi\ untuk\ mengeset\ deskripsi\ lokasi\r\n
+comment8.params=
+comment8.target=void\ printData()
+comment8.text=\r\n\ Metode\ printDatauntuk\ menampilkan\ data\ lokasi\r\n
+numComments=9

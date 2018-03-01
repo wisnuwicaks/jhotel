@@ -2,22 +2,21 @@
 /**
  * Write a description of class Customer here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Wisnu Wicaksono
+ * @version 1 Maret 2018
  */
 public class Customer
 {
+    
     // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
 
-    /**
-     * Constructor for objects of class Customer
-     */
-    public Customer(int i, String n)
+    //Ini adalah constuctor class Customer
+    public Customer(int id, String nama)
     {
-        i=id;
-        n=nama;
+        this.id=id;
+        this.nama=nama;
     }
 
     public int getID()
@@ -28,14 +27,19 @@ public class Customer
     {
         return nama;
     }
-    public void setID(int id1)
+    public void setID(int id)
     {
-       id=id1;
+    this.id=id;  
     }
     
-    public void setNama(String nama1)
+    public void setNama(String nama)
     {
-        nama=nama1;
+    this.nama=nama;  
+    }
+    
+    public void printData()
+    {
+        System.out.print("Nama :" + nama);
     }
     
 }

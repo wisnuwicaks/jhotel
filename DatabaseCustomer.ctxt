@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ Wisnu\ Wicaksono\r\n\ @version\ 1\ Maret\ 2018\r\n
 comment1.params=baru
 comment1.target=boolean\ addCustomer(Customer)
 comment2.params=id

@@ -2,59 +2,102 @@
 /**
  * Write a description of class Pesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Wisnu Wicaksono
+ * @version 1 Maret 2018
  */
 public class Pesanan
 {
+    //Ini adalah instace variable class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
-  
-    public Pesanan()
+    
+    //Ini adalah constuctor class Pesanan
+    public Pesanan(double biaya, Customer pelanggan)
     {
-        
+        this.biaya=biaya;
+        this.pelanggan=pelanggan;
     }
     
+    /*
+     * Ini adalah metode accessor untuk mendapatkan nilai biaya
+     * @return biaya menyatakan besar biaya
+     */
     public double getBiaya()
     {
         return biaya;
     }
-    
+    /*
+     * Ini adalah metode accessor untuk mendapatkan nilai pelanggan
+     * @return pelanggan merupakan data pelanggan
+     */
     public Customer getPelanggan()
     {
         return pelanggan;
     }
-    
+    /*
+     * Ini adalah metode untuk mendapatkan nilai varible isDiproses
+     * @return isDiproses : untuk variable isDiproses
+     */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
-    
+    /*
+     * Ini adalah metode accessor untuk mendapatkan nilai variable isSelesai
+     * @return isSelesai
+     */
     public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
-    
+    /*
+     * Ini adalah metode mutator untuk mengeset besar biaya 
+     * 
+     */
+    public void setBiaya(double biaya)
+    {
+        this.biaya=biaya;
+        
+    }
+    /*
+     * Ini adalah metode mutaor untuk mengassign data Customer baru
+     * @param baru adalah parameter untuk assign pelanggan baru
+     */
     public void setPelanggan(Customer baru)
     {
         pelanggan=baru;
     }
-    
+    /*
+     * Ini adalah metode untuk mendapatkan nilai pelanggan
+     * @return isDiproses untuk mengembalikan nilai variable isDiproses
+     * @param diproses : parameter untuk instance variable diproses
+     */
     public void setStatusDiproses(boolean diproses)
     {
         isDiproses=diproses;
+        
     }
-    
+    /*
+     * Ini adalah metode mutator untuk mengassign status selesai
+     * 
+     */
     public void setStatusSelesai(boolean diproses)
     {
-        isSelesai=diproses;
+       isSelesai=diproses;
+    }
+    /*
+     * Ini adalah metode untuk mencetak besar biaya
+     * 
+     */
+    public void printData()
+    {
+        System.out.print("Biaya :"+ biaya);
+        
     }
     
   
-
-   
 }
