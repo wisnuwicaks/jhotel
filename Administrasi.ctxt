@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Administrasi
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Administrasi\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=pesan\ kamar
+comment1.target=void\ pesananDitugaskan(Pesanan,\ Room)
+comment2.params=pesan\ kamar
+comment2.target=void\ roomAmbilPesanan(Pesanan,\ Room)
+comment3.params=kamar
+comment3.target=void\ roomLepasPesanan(Room)
+comment4.params=kamar
+comment4.target=void\ pesananDibatalkan(Room)
+comment5.params=kamar
+comment5.target=void\ pesananSelesai(Room)
+comment6.params=pesan
+comment6.target=void\ pesananDibatalkan(Pesanan)
+comment7.params=pesan
+comment7.target=void\ pesananSelesai(Pesanan)
+numComments=8

@@ -14,7 +14,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
-    
+    private Room kamar;
     //Ini adalah constuctor class Pesanan
     public Pesanan(double biaya, Customer pelanggan)
     {
@@ -54,6 +54,9 @@ public class Pesanan
     {
         return isSelesai;
     }
+    public Room getRoom(){
+        return kamar;
+    }
     /*
      * Ini adalah metode mutator untuk mengeset besar biaya 
      * 
@@ -85,17 +88,22 @@ public class Pesanan
      * Ini adalah metode mutator untuk mengassign status selesai
      * 
      */
-    public void setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean selesai)
     {
-       isSelesai=diproses;
+       isSelesai=selesai;
     }
+    
+    public void setRoom(Room kamar){
+        this.kamar=kamar;
+    }
+    
     /*
      * Ini adalah metode untuk mencetak besar biaya
      * 
      */
     public void printData()
     {
-        System.out.print("Biaya :"+ biaya);
+        System.out.println("Biaya :"+ biaya);
         
     }
     

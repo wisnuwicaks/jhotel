@@ -54,7 +54,7 @@ public class Hotel
       
       public void printData()
       {
-          System.out.print("Nama :" + nama);
+          System.out.println("Nama :" + nama);
           
       }
       
