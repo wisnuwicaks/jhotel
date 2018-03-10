@@ -14,7 +14,14 @@ public class Hotel
       private Lokasi lokasi;
       private int bintang;
       
-      //Ini adalah constuctor class Hotel
+     /**
+     * Constructor for objects of class Hotel.
+     * 
+     * @param nama : untuk menentukan nama hotel
+     * @param lokasi : untuk menentukan lokasi hotel
+     * @param bintang : untuk menentukan hotel bintang berapa
+     */
+    
       public Hotel(String nama, Lokasi lokasi, int bintang)
       {
           this.nama=nama;
@@ -22,6 +29,12 @@ public class Hotel
           this.bintang=bintang;
       }
       
+     /**
+     * method getBintang
+     * 
+     * @return bintang : untuk mengembalikan nilai bintang
+
+     */
       public int getBintang()
       {
           return bintang;
@@ -54,7 +67,10 @@ public class Hotel
       
       public void printData()
       {
-          System.out.println("Nama :" + nama);
+          System.out.println("Hotel");
+          System.out.println("Nama hotel :" + nama);
+          System.out.println("Lokasi :" + lokasi.getDeskripsi());
+          System.out.println("Bintang :" + bintang);
           
       }
       

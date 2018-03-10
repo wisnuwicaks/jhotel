@@ -11,15 +11,17 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    
     //Ini adalah constuctor class Pesanan
     public Pesanan(double biaya, Customer pelanggan)
     {
         this.biaya=biaya;
         this.pelanggan=pelanggan;
+        nama_pelanggan=pelanggan.getNama();
     }
     
     /*
@@ -30,6 +32,7 @@ public class Pesanan
     {
         return biaya;
     }
+    
     /*
      * Ini adalah metode accessor untuk mendapatkan nilai pelanggan
      * @return pelanggan merupakan data pelanggan
@@ -38,6 +41,15 @@ public class Pesanan
     {
         return pelanggan;
     }
+    
+    public String getNamaPelanggan(){
+        return nama_pelanggan;
+    }
+    
+    public TipeKamar getTipeKamar (){
+        return tipe_kamar;
+    }
+    
     /*
      * Ini adalah metode untuk mendapatkan nilai varible isDiproses
      * @return isDiproses : untuk variable isDiproses
@@ -46,6 +58,7 @@ public class Pesanan
     {
         return isDiproses;
     }
+    
     /*
      * Ini adalah metode accessor untuk mendapatkan nilai variable isSelesai
      * @return isSelesai
@@ -54,9 +67,11 @@ public class Pesanan
     {
         return isSelesai;
     }
+    
     public Room getRoom(){
         return kamar;
     }
+    
     /*
      * Ini adalah metode mutator untuk mengeset besar biaya 
      * 
@@ -66,14 +81,24 @@ public class Pesanan
         this.biaya=biaya;
         
     }
+    
     /*
      * Ini adalah metode mutaor untuk mengassign data Customer baru
      * @param baru adalah parameter untuk assign pelanggan baru
      */
-    public void setPelanggan(Customer baru)
+    public void setPelanggan(Customer pelanggan)
     {
-        pelanggan=baru;
+        this.pelanggan=pelanggan;
     }
+    
+    public void setNamaPelanggan (String nama_pelanggan){
+        this.nama_pelanggan=nama_pelanggan;
+    }
+    
+    public void setTipeKamar (TipeKamar tipe_kamar){
+        this.tipe_kamar=tipe_kamar;
+    }
+    
     /*
      * Ini adalah metode untuk mendapatkan nilai pelanggan
      * @return isDiproses untuk mengembalikan nilai variable isDiproses
@@ -84,6 +109,7 @@ public class Pesanan
         isDiproses=diproses;
         
     }
+    
     /*
      * Ini adalah metode mutator untuk mengassign status selesai
      * 
@@ -98,13 +124,16 @@ public class Pesanan
     }
     
     /*
-     * Ini adalah metode untuk mencetak besar biaya
+     * Ini adalah metode untuk mencetak informasi mengenai pesanan
      * 
      */
     public void printData()
     {
-        System.out.println("Biaya :"+ biaya);
-        
+        System.out.println("Pesanan");
+        System.out.println("Nama pelanggan :"+ nama_pelanggan);
+        System.out.println("Tipe kamar :"+ tipe_kamar);
+        System.out.println("Status layanan diproses :"+ isDiproses);
+        System.out.println("Status layanan selesai :"+ isSelesai);
     }
     
   
