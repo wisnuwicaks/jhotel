@@ -12,11 +12,11 @@ public class JHotel
         Lokasi lokasi1 = new Lokasi (20,20, "Depok");
         Customer customer1 = new Customer(15299,"Wisnu");
         Hotel hotel1 = new Hotel("Hotelku",lokasi1,5);
-        Room room1 = new Room(hotel1,"66",true,customer1,1000000,StatusKamar.BOOKED);
-        Pesanan pesanan1= new Pesanan(1000000,customer1);
-        
-        pesanan1.setTipeKamar(TipeKamar.PREMIUM);
-        
+        Room room1 = new SingleRoom(hotel1,"222",true,StatusKamar.VACANT);
+        Pesanan pesanan1= new Pesanan(3,customer1,room1);
+        room1.setDailyTariff(3000000);
+        //pesanan1.setTipeKamar(TipeKamar.PREMIUM);
+     
         System.out.println("Welcome to JHotel");
         lokasi1.printData();
         customer1.printData();
@@ -27,7 +27,7 @@ public class JHotel
         room1.printData();
         pesanan1.printData();
         
-        System.out.println("==================METHOD 2====================");
+        /*System.out.println("==================METHOD 2====================");
         Administrasi.pesananDibatalkan(room1);
         room1.printData();
         pesanan1.printData();
@@ -49,7 +49,8 @@ public class JHotel
         Administrasi.pesananSelesai(pesanan1);
         room1.printData();
         pesanan1.printData();
-
+        */
+        
         
     }
     //constructor class JHotel

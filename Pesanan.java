@@ -9,20 +9,21 @@ public class Pesanan
 {
     //Ini adalah instace variable class Pesanan
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
     
     //Ini adalah constuctor class Pesanan
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-        this.biaya=biaya;
         this.pelanggan=pelanggan;
-        nama_pelanggan=pelanggan.getNama();
+        this.jumlahHari=jumlahHari;
+        this.kamar=kamar;
+        
     }
+    
     
     /*
      * Ini adalah metode accessor untuk mendapatkan nilai biaya
@@ -31,6 +32,10 @@ public class Pesanan
     public double getBiaya()
     {
         return biaya;
+    }
+    
+    public double getJumlahHari(){
+        return jumlahHari;
     }
     
     /*
@@ -42,13 +47,6 @@ public class Pesanan
         return pelanggan;
     }
     
-    public String getNamaPelanggan(){
-        return nama_pelanggan;
-    }
-    
-    public TipeKamar getTipeKamar (){
-        return tipe_kamar;
-    }
     
     /*
      * Ini adalah metode untuk mendapatkan nilai varible isDiproses
@@ -76,12 +74,16 @@ public class Pesanan
      * Ini adalah metode mutator untuk mengeset besar biaya 
      * 
      */
-    public void setBiaya(double biaya)
+    public void setBiaya()
     {
-        this.biaya=biaya;
+        this.biaya=(kamar.getDailyTariff())*jumlahHari;
         
     }
     
+    public void setJumlahHari(double jumlahHari){
+        this.jumlahHari=jumlahHari;
+    
+    }
     /*
      * Ini adalah metode mutaor untuk mengassign data Customer baru
      * @param baru adalah parameter untuk assign pelanggan baru
@@ -91,13 +93,6 @@ public class Pesanan
         this.pelanggan=pelanggan;
     }
     
-    public void setNamaPelanggan (String nama_pelanggan){
-        this.nama_pelanggan=nama_pelanggan;
-    }
-    
-    public void setTipeKamar (TipeKamar tipe_kamar){
-        this.tipe_kamar=tipe_kamar;
-    }
     
     /*
      * Ini adalah metode untuk mendapatkan nilai pelanggan
@@ -130,10 +125,11 @@ public class Pesanan
     public void printData()
     {
         System.out.println("Pesanan");
-        System.out.println("Nama pelanggan :"+ nama_pelanggan);
-        System.out.println("Tipe kamar :"+ tipe_kamar);
+        System.out.println("Nama Pelanggan :"+ pelanggan.getNama());
         System.out.println("Status layanan diproses :"+ isDiproses);
         System.out.println("Status layanan selesai :"+ isSelesai);
+        System.out.println("Jumlah Hari :"+ jumlahHari);
+        System.out.println("Biaya :"+ biaya);
     }
     
   
