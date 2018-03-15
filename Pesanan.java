@@ -21,6 +21,7 @@ public class Pesanan
         this.pelanggan=pelanggan;
         this.jumlahHari=jumlahHari;
         this.kamar=kamar;
+        this.biaya=(kamar.getDailyTariff())*jumlahHari;
         
     }
     

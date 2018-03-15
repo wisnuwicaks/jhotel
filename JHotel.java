@@ -13,8 +13,9 @@ public class JHotel
         Customer customer1 = new Customer(15299,"Wisnu");
         Hotel hotel1 = new Hotel("Hotelku",lokasi1,5);
         Room room1 = new SingleRoom(hotel1,"222",true,StatusKamar.VACANT);
-        Pesanan pesanan1= new Pesanan(3,customer1,room1);
         room1.setDailyTariff(3000000);
+        Pesanan pesanan1= new Pesanan(3,customer1,room1);
+        
         //pesanan1.setTipeKamar(TipeKamar.PREMIUM);
      
         System.out.println("Welcome to JHotel");
