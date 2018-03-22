@@ -66,6 +66,10 @@ public class Lokasi
     /*
      * Metode printDatauntuk menampilkan data lokasi
      */
+    
+    public String toString(){
+        return null;
+    }
     public void printData()
     {
         System.out.println("Lokasi");

@@ -64,7 +64,9 @@ public class Hotel
       {
           this.bintang=bintang;
       }
-      
+      public String toString(){
+          return null;
+      }
       public void printData()
       {
           System.out.println("Hotel");

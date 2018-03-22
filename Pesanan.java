@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * Write a description of class Pesanan here.
  *
@@ -14,6 +14,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
     
     //Ini adalah constuctor class Pesanan
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
@@ -117,6 +118,13 @@ public class Pesanan
     
     public void setRoom(Room kamar){
         this.kamar=kamar;
+    }
+    
+    public void setTanggalPesan (Date tanggalPesan){
+        this.tanggalPesan=tanggalPesan;
+    }
+    public String toString(){
+        return null;
     }
     
     /*

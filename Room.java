@@ -80,6 +80,9 @@ public abstract class Room
         this.pesan=pesan;
     }
     
+    public String toString(){
+        return null;
+    }
     public void printData(){
         System.out.println("Nama hotel :" + hotel.getNama());
         System.out.println("Nomor Kamar :" + nomor_kamar);
