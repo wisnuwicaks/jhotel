@@ -64,9 +64,15 @@ public class Hotel
       {
           this.bintang=bintang;
       }
-      public String toString(){
-          return null;
-      }
+      
+       public String toString(){
+        return "\nKoordinat X       : "+ nama+
+               "\nKoordinat Y       : "+ lokasi.getDeskripsi()+
+               "\nDeskripsi lokasi  : "+ bintang;
+        }
+      
+      
+      /*
       public void printData()
       {
           System.out.println("Hotel");
@@ -75,5 +81,6 @@ public class Hotel
           System.out.println("Bintang :" + bintang);
           
       }
+      */
       
 }

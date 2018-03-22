@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.regex.*;
+import java.text.*;
 /**
  * Write a description of class Customer here.
  *
@@ -20,11 +21,13 @@ public class Customer
     {
         this.id=id;
         this.nama=nama;
-        Date dob = new Date(tahun,bulan,tanggal);
+        dob = new Date(tahun,bulan,tanggal);
     }
     
-    public Customer(){
-    
+    public Customer(int id, String nama, Date dob){
+        this.id=id;
+        this.nama=nama;
+        this.dob=dob;
     }
 
     public int getID()
@@ -42,6 +45,9 @@ public class Customer
     
     public Date getDOB()
     {
+        DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String output = formatter.format(dob);
+        System.out.print(output);   
         return dob;
     }
     public void setID(int id)
@@ -73,14 +79,29 @@ public class Customer
         this.dob=dob;
     }
     
-    public String toString(){
-        return null;
+        public String toString(){
+            if (DatabasePesanan.getPesanan(this)!=null){
+            return "\nCustomer ID       : "+ id+
+                   "\nNama              : "+nama+
+                   "\nEmail             : "+ email+
+                   "\nDate of Birth     : "+dob+
+                   "\nBooking order is in progress";
+                }
+                else{
+            return "\nCustomer ID       : "+ id+
+                   "\nNama              : "+nama+
+                   "\nEmail             : "+ email+
+                   "\nDate of Birth     : "+dob+
+                   "\nBooking order is in progress";
+        }
     }
+    /*
     public void printData()
     {
         System.out.println("Customer");
         System.out.println("ID :" + id);
         System.out.println("Nama :" + nama);
     }
+    */
     
 }

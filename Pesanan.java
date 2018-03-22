@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.text.*;
 /**
  * Write a description of class Pesanan here.
  *
@@ -17,13 +18,21 @@ public class Pesanan
     private Date tanggalPesan;
     
     //Ini adalah constuctor class Pesanan
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int hari, int bulan, int tahun)
     {
         this.pelanggan=pelanggan;
         this.jumlahHari=jumlahHari;
         this.kamar=kamar;
-        this.biaya=(kamar.getDailyTariff())*jumlahHari;
+        tanggalPesan = new Date(tahun,bulan,hari);
+        //this.biaya=(kamar.getDailyTariff())*jumlahHari;
         
+    }
+    
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan){
+        this.jumlahHari=jumlahHari;
+        this.pelanggan=pelanggan;
+        this.tanggalPesan=tanggalPesan;
+    
     }
     
     
@@ -123,14 +132,24 @@ public class Pesanan
     public void setTanggalPesan (Date tanggalPesan){
         this.tanggalPesan=tanggalPesan;
     }
-    public String toString(){
-        return null;
+   
+    /*
+    public String toString()
+        {
+            String final_status = "KOSONG";
+            if(isDiproses == true && isSelesai==false){
+                final_status="DIPROSES";
+        }
+        else if(isDiproses==false && isSelesai==false){
+                final_status="KOSONG";
+            }
     }
-    
+    */
     /*
      * Ini adalah metode untuk mencetak informasi mengenai pesanan
      * 
      */
+    /*
     public void printData()
     {
         System.out.println("Pesanan");
@@ -140,6 +159,6 @@ public class Pesanan
         System.out.println("Jumlah Hari :"+ jumlahHari);
         System.out.println("Biaya :"+ biaya);
     }
-    
-  
+    */
+   
 }

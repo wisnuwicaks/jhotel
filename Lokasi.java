@@ -1,4 +1,4 @@
-
+import java.text.*;
 /**
  * Write a description of class Lokasi here.
  *
@@ -67,9 +67,16 @@ public class Lokasi
      * Metode printDatauntuk menampilkan data lokasi
      */
     
+  
+    
     public String toString(){
-        return null;
+        return "\nKoordinat X       : "+ x_coord+
+               "\nKoordinat Y       : "+ y_coord+
+               "\nDeskripsi lokasi  : "+ deskripsiLokasi;
     }
+    
+  
+    /*
     public void printData()
     {
         System.out.println("Lokasi");
@@ -77,6 +84,7 @@ public class Lokasi
         System.out.println("Koordinat y :" + y_coord);
         System.out.println("Deskripsi :" + deskripsiLokasi);
     }
+    */
 
     
 }
