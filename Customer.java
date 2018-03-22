@@ -16,10 +16,15 @@ public class Customer
     protected Date dob;
 
     //Ini adalah constuctor class Customer
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tahun, int bulan, int tanggal)
     {
         this.id=id;
         this.nama=nama;
+        Date dob = new Date(tahun,bulan,tanggal);
+    }
+    
+    public Customer(){
+    
     }
 
     public int getID()

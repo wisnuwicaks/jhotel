@@ -8,7 +8,8 @@
 public class JHotel
 {
     public static void main (String args[])
-    {
+    {   
+        /*
         Lokasi lokasi1 = new Lokasi (20,20, "Depok");
         Customer customer1 = new Customer(15299,"Wisnu");
         Hotel hotel1 = new Hotel("Hotelku",lokasi1,5);
