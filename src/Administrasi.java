@@ -14,18 +14,21 @@ public class Administrasi
        pesan.setStatusSelesai(false);
        pesan.setStatusDiproses(true);
        pesan.setRoom(kamar);
-       roomAmbilPesanan(pesan, kamar);
+       //roomAmbilPesanan(pesan, kamar);
     }
-    
+
     /**
      * Method ini untuk menyatakan bahwa status ruangan 
      * sudah berubah menjadi “booked” dan “ter-link” 
      * dengan objek Pesanan yang diberikan.
      */
+    /*
    public static void roomAmbilPesanan(Pesanan pesan, Room kamar){
        kamar.setStatusKamar(StatusKamar.BOOKED);
        kamar.setPesanan(pesan);
     }
+    */
+
     
     /**
      * Method ini untuk menyatakan bahwa status ruangan 
@@ -44,6 +47,7 @@ public class Administrasi
    public static void pesananDibatalkan(Room kamar){
        kamar.getPesanan().setStatusSelesai(false);
        kamar.getPesanan().setStatusDiproses(false);
+       kamar.setPesanan().setStatusAktif(false);
        kamar.setPesanan(null);
        roomLepasPesanan(kamar);
     }
@@ -55,6 +59,7 @@ public class Administrasi
    public static void pesananSelesai(Room kamar){
        kamar.getPesanan().setStatusSelesai(true);
        kamar.getPesanan().setStatusDiproses(false);
+       kamar.setPesanan().setStatusAktif(false);
        kamar.setPesanan(null);
        roomLepasPesanan(kamar);    
     }
