@@ -44,7 +44,10 @@ public class Pesanan
     {
         return biaya;
     }
-    
+    /*
+     * Ini adalah metode accessor untuk mendapatkan nilai jumlahHari
+     * @return biaya menyatakan besar biaya
+     */
     public double getJumlahHari(){
         return jumlahHari;
     }
@@ -76,9 +79,20 @@ public class Pesanan
     {
         return isSelesai;
     }
-    
+     /*
+     * Ini adalah metode accessor untuk mendapatkan nilai variable kamar
+     * @return kamar
+     */
     public Room getRoom(){
         return kamar;
+    }
+    
+    public Date getTanggalPesan()
+    {
+        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String hasil = df.format(tanggalPesan);
+        System.out.println(hasil);
+        return tanggalPesan;
     }
     
     /*
@@ -133,18 +147,25 @@ public class Pesanan
         this.tanggalPesan=tanggalPesan;
     }
    
-    /*
+    
     public String toString()
         {
             String final_status = "KOSONG";
             if(isDiproses == true && isSelesai==false){
-                final_status="DIPROSES";
+            final_status="DIPROSES";
         }
         else if(isDiproses==false && isSelesai==false){
-                final_status="KOSONG";
+            final_status="KOSONG";
             }
+         else if(isDiproses==false && isSelesai==true){
+            final_status="SELESAI";
+        }
+        return "Dibuat oleh "+pelanggan.getNama()+
+               "Proses booking untuk"+kamar.getHotel()+
+               "kamar nomor "+kamar.getNomorKamar()+
+               ".Status : "+final_status+".";
     }
-    */
+    
     /*
      * Ini adalah metode untuk mencetak informasi mengenai pesanan
      * 

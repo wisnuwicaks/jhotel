@@ -81,16 +81,16 @@ public class Customer
     
         public String toString(){
             if (DatabasePesanan.getPesanan(this)!=null){
-            return "\nCustomer ID       : "+ id+
+            return "\nCustomer ID       : "+id+
                    "\nNama              : "+nama+
-                   "\nEmail             : "+ email+
+                   "\nEmail             : "+email+
                    "\nDate of Birth     : "+dob+
                    "\nBooking order is in progress";
                 }
                 else{
-            return "\nCustomer ID       : "+ id+
+            return "\nCustomer ID       : "+id+
                    "\nNama              : "+nama+
-                   "\nEmail             : "+ email+
+                   "\nEmail             : "+email+
                    "\nDate of Birth     : "+dob+
                    "\nBooking order is in progress";
         }
