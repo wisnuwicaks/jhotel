@@ -29,7 +29,8 @@ public class DatabaseRoom
 
         return false;
     }
-    public static Room getRoom(Hotel hotel, String nomor_kamar){
+    public static Room getRoom(Hotel hotel, String nomor_kamar)
+    {
         for(Room kamar : ROOM_DATABASE)
         {
             if(kamar.getHotel().equals(hotel) &&
@@ -41,7 +42,8 @@ public class DatabaseRoom
 
         return null;
     }
-    public static ArrayList<Room> getRoomsFromHotel(Hotel hotel){
+    public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
+    {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
 
         for(Room kamar : ROOM_DATABASE)
@@ -54,7 +56,8 @@ public class DatabaseRoom
 
         return tempRoom;
     }
-    public static ArrayList<Room> getVacantRooms(){
+    public static ArrayList<Room> getVacantRooms()
+    {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
 
         for(Room kamar : ROOM_DATABASE)
@@ -70,7 +73,7 @@ public class DatabaseRoom
 
     public static boolean removeRoom(Hotel hotel, String nommor_kamar)
     {
-
+        return null;
     }
 
 

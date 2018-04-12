@@ -79,7 +79,8 @@ public class Customer
         this.dob=dob;
     }
     
-        public String toString(){
+    public String toString()
+    {
             if (DatabasePesanan.getPesanan(this)!=null){
             return "\nCustomer ID       : "+id+
                    "\nNama              : "+nama+

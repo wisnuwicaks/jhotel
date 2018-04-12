@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * Menangani database pesanan
  *
  * @author Wisnu Wicaksono
- * @version 1 Maret 2018
+ * @version 12 April 2018
  */
 
 public class DatabasePesanan
@@ -86,6 +86,29 @@ public class DatabasePesanan
 
     public static boolean removePesanan(Pesanan pesan)
     {
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.equals(pesan))
+            {
+                if(pesanan.getRoom() != null)
+                {
+                    Administrasi.pesananDibatalkan(pesanan);
+                }
+                else
+                {
+                    if(pesanan.getStatusAktif())
+                    {
+                        pesanan.setStatusAktif(false);
+                    }
+                }
+
+                if(PESANAN_DATABASE.remove(pesanan))
+                {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
     /*

@@ -2,8 +2,8 @@
 /**
  * Write a description of class Room here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Wisnu Wicaksono
+ * @version 12 April 2018
  */
 public abstract class Room
 {
