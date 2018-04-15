@@ -5,29 +5,36 @@ import java.text.*;
  * Write a description of class Customer here.
  *
  * @author Wisnu Wicaksono
- * @version 1 Maret 2018
+ * @version 1.0
  */
 public class Customer
 {
     
-    // instance variables - replace the example below with your own
+    // instance variables class Customer
     protected int id;
     protected String nama;
     protected String email;
     protected Date dob;
 
-    //Ini adalah constuctor class Customer
-    public Customer(int id, String nama, int tahun, int bulan, int tanggal)
+    /**
+     * Constructor dari class Customer.
+     *
+     * @param nama  nama pelanggan
+     * @param tanggal  tanggal lahir pelanggan
+     * @param bulan  bulan lahir pelanggan
+     * @param tahun  tahun lahir pelanggan
+     */
+    public Customer(String nama, int tahun, int bulan, int tanggal)
     {
-        this.id=id;
+        this.id=DatabaseCustomer.getLastCustomerID() + 1;
         this.nama=nama;
         dob = new Date(tahun,bulan,tanggal);
     }
     
-    public Customer(int id, String nama, Date dob){
-        this.id=id;
-        this.nama=nama;
-        this.dob=dob;
+    public Customer(String nama, Date dob){
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
+        this.nama = nama;
+        this.dob = dob;
     }
 
     public int getID()
@@ -69,8 +76,13 @@ public class Customer
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(email);
         
-        if (m.matches()){
+        if (m.matches())
+        {
             this.email = email;
+        }
+        else
+        {
+            System.out.println("Email tidak valid");
         }
        
     }
@@ -81,20 +93,22 @@ public class Customer
     
     public String toString()
     {
-            if (DatabasePesanan.getPesanan(this)!=null){
-            return "\nCustomer ID       : "+id+
-                   "\nNama              : "+nama+
-                   "\nEmail             : "+email+
-                   "\nDate of Birth     : "+dob+
-                   "\nBooking order is in progress";
-                }
-                else{
-            return "\nCustomer ID       : "+id+
-                   "\nNama              : "+nama+
-                   "\nEmail             : "+email+
-                   "\nDate of Birth     : "+dob+
-                   "\nBooking order is in progress";
-        }
+            if (DatabasePesanan.getPesanan(this)!=null)
+            {
+            return "\nCustomer ID       : "+getID()+
+                   "\nNama              : "+getNama()+
+                   "\nEmail             : "+getEmail()+
+                   "\nDate of Birth     : "+getDOB()+
+                   "\nBooking sedang dalam proses";
+            }
+            else
+            {
+             return"\nCustomer ID       : "+getID()+
+                    "\nNama              : "+getNama()+
+                    "\nEmail             : "+getEmail()+
+                    "\nDate of Birth     : "+getDOB()+
+                    "\nBooking sedang dalam proses";
+            }
     }
     /*
     public void printData()

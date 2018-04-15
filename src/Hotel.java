@@ -13,22 +13,25 @@ public class Hotel
       private String nama;
       private Lokasi lokasi;
       private int bintang;
-      
+      private int id;
      /**
      * Constructor for objects of class Hotel.
      * 
-     * @param nama : untuk menentukan nama hotel
-     * @param lokasi : untuk menentukan lokasi hotel
-     * @param bintang : untuk menentukan hotel bintang berapa
+     * @param nama  untuk menentukan nama hotel
+     * @param lokasi  untuk menentukan lokasi hotel
+     * @param bintang  untuk menentukan hotel bintang berapa
      */
-    
       public Hotel(String nama, Lokasi lokasi, int bintang)
       {
           this.nama=nama;
           this.lokasi=lokasi;
           this.bintang=bintang;
+          this.id = DatabaseHotel.getLastHotelID() + 1;
       }
-      
+    public int getID()
+    {
+        return id;
+    }
      /**
      * method getBintang
      * 
@@ -49,7 +52,10 @@ public class Hotel
       {
           return lokasi;
       }
-      
+      public void setID(int id)
+      {
+          this.id=id;
+      }
       public void setNama(String nama)
       {
           this.nama=nama;
@@ -65,7 +71,8 @@ public class Hotel
           this.bintang=bintang;
       }
       
-       public String toString(){
+       public String toString()
+       {
         return "\nKoordinat X       : "+ nama+
                "\nKoordinat Y       : "+ lokasi.getDeskripsi()+
                "\nDeskripsi lokasi  : "+ bintang;

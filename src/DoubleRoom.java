@@ -22,7 +22,7 @@ public class DoubleRoom extends Room
 
     public Customer getCustomer2()
     {
-        // put your code here
+
         return customer2;
     }
     

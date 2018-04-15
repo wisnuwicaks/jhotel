@@ -9,6 +9,7 @@ import java.text.*;
 public class Pesanan
 {
     //Ini adalah instace variable class Pesanan
+    private int id;
     private double biaya;
     private double jumlahHari;
     private Customer pelanggan;
@@ -17,7 +18,6 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
-    private int id;
     private Pesanan pesan;
 
     
@@ -28,18 +28,22 @@ public class Pesanan
         this.jumlahHari=jumlahHari;
         isAktif=true;
         tanggalPesan=new Date();
+        id = DatabasePesanan.getLastPesananID() + 1;
         //tanggalPesan = new Date(tahun,bulan,hari);
         //this.biaya=(kamar.getDailyTariff())*jumlahHari;
     }
-    
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan){
+
+    /*
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+    {
         this.jumlahHari=jumlahHari;
         this.pelanggan=pelanggan;
         this.tanggalPesan=tanggalPesan;
-    
     }
+    */
     
-    public int getID(){
+    public int getID()
+    {
         return id;
     }
     /*
@@ -54,7 +58,8 @@ public class Pesanan
      * Ini adalah metode accessor untuk mendapatkan nilai jumlahHari
      * @return biaya menyatakan besar biaya
      */
-    public double getJumlahHari(){
+    public double getJumlahHari()
+    {
         return jumlahHari;
     }
     
@@ -67,7 +72,8 @@ public class Pesanan
         return pelanggan;
     }
 
-    public boolean getStatusAktif(){
+    public boolean getStatusAktif()
+    {
         return isAktif;
     }
     
@@ -75,7 +81,8 @@ public class Pesanan
      * Ini adalah metode untuk mendapatkan nilai varible isDiproses
      * @return isDiproses : untuk variable isDiproses
      */
-    public boolean getStatusDiproses() {
+    public boolean getStatusDiproses()
+    {
         return isDiproses;
     }
     
@@ -83,14 +90,16 @@ public class Pesanan
      * Ini adalah metode accessor untuk mendapatkan nilai variable isSelesai
      * @return isSelesai
      */
-    public boolean getStatusSelesai() {
+    public boolean getStatusSelesai()
+    {
         return isSelesai;
     }
      /*
      * Ini adalah metode accessor untuk mendapatkan nilai variable kamar
      * @return kamar
      */
-    public Room getRoom(){
+    public Room getRoom()
+    {
         return kamar;
     }
     
@@ -101,29 +110,34 @@ public class Pesanan
         System.out.println(hasil);
         return tanggalPesan;
     }
-    public void setID (int id){
+    public void setID (int id)
+    {
         this.id=id;
     }
     /*
      * Ini adalah metode mutator untuk mengeset besar biaya 
      * 
      */
-    public void setBiaya() {
+    public void setBiaya()
+    {
         this.biaya=(kamar.getDailyTariff())*jumlahHari;
     }
     
-    public void setJumlahHari(double jumlahHari){
+    public void setJumlahHari(double jumlahHari)
+    {
         this.jumlahHari=jumlahHari;
     }
     /*
      * Ini adalah metode mutaor untuk mengassign data Customer baru
      * @param baru adalah parameter untuk assign pelanggan baru
      */
-    public void setPelanggan(Customer pelanggan) {
+    public void setPelanggan(Customer pelanggan)
+    {
         this.pelanggan=pelanggan;
     }
     
-    public void setStatusAktif(boolean aktif){
+    public void setStatusAktif(boolean aktif)
+    {
         this.isAktif=aktif;
     }
     /*
@@ -131,7 +145,8 @@ public class Pesanan
      * @return isDiproses untuk mengembalikan nilai variable isDiproses
      * @param diproses : parameter untuk instance variable diproses
      */
-    public void setStatusDiproses(boolean diproses) {
+    public void setStatusDiproses(boolean diproses)
+    {
         isDiproses=diproses;
     }
     
@@ -139,11 +154,13 @@ public class Pesanan
      * Ini adalah metode mutator untuk mengassign status selesai
      * 
      */
-    public void setStatusSelesai(boolean selesai) {
+    public void setStatusSelesai(boolean selesai)
+    {
         isSelesai=selesai;
     }
     
-    public void setRoom(Room kamar){
+    public void setRoom(Room kamar)
+    {
         this.kamar=kamar;
     }
     
@@ -153,21 +170,24 @@ public class Pesanan
    
     
     public String toString()
-        {
-            String final_status = "KOSONG";
-            if(isDiproses == true && isSelesai==false){
-            final_status="DIPROSES";
-        }
-        else if(isDiproses==false && isSelesai==false){
-            final_status="KOSONG";
+    {
+        String final_status = "KOSONG";
+            if(isDiproses == true && isSelesai==false)
+            {
+                final_status="DIPROSES";
             }
-         else if(isDiproses==false && isSelesai==true){
-            final_status="SELESAI";
-        }
-        return "Dibuat oleh "+pelanggan.getNama()+
-               "Proses booking untuk"+kamar.getHotel()+
-               "kamar nomor "+kamar.getNomorKamar()+
-               ".Status : "+final_status+".";
+            else if(isDiproses==false && isSelesai==false)
+            {
+                final_status="KOSONG";
+            }
+            else if(isDiproses==false && isSelesai==true)
+            {
+                final_status="SELESAI";
+            }
+            return  "Dibuat oleh "+pelanggan.getNama()+
+                    "Proses booking untuk"+kamar.getHotel()+
+                    "kamar nomor "+kamar.getNomorKamar()+
+                    ".Status : "+final_status+".";
     }
     
     /*

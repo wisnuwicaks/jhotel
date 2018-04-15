@@ -8,12 +8,14 @@
 public class Administrasi
 {
    /**
-     * Method ini untuk memproses ruangan yang akan di-assign. 
+     * Method ini untuk memproses kamar yang akan di-assign.
      */
-   public static void pesananDitugaskan(Pesanan pesan,Room kamar){
+   public static void pesananDitugaskan(Pesanan pesan,Room kamar)
+   {
        pesan.setStatusSelesai(false);
        pesan.setStatusDiproses(true);
        pesan.setRoom(kamar);
+       kamar.setStatusKamar(StatusKamar.BOOKED);
        //roomAmbilPesanan(pesan, kamar);
     }
 
@@ -35,21 +37,24 @@ public class Administrasi
      * sudah berubah menjadi “vacant” dan “ter-link” 
      * dengan objek Pesanan yang diberikan.
      */
+   /*
    public static void roomLepasPesanan(Room kamar){
        kamar.setStatusKamar(StatusKamar.VACANT);
        kamar.setPesanan(null);
     }
+    */
     
     /**
      * Method ini untuk mengubah status pesanan dan status room 
      * yang telah membatalkan pesanan serta me-unlink masing-masing objek. 
      */
    public static void pesananDibatalkan(Room kamar){
-       kamar.getPesanan().setStatusSelesai(false);
-       kamar.getPesanan().setStatusDiproses(false);
-       kamar.setPesanan().setStatusAktif(false);
-       kamar.setPesanan(null);
-       roomLepasPesanan(kamar);
+       //kamar.getPesanan().setStatusSelesai(false);
+       //kamar.getPesanan().setStatusDiproses(false);
+       //kamar.setPesanan().setStatusAktif(false);
+       //kamar.setPesanan(null);
+       //roomLepasPesanan(kamar);
+       kamar.setStatusKamar(StatusKamar.VACANT);
     }
     
    /**
@@ -57,23 +62,26 @@ public class Administrasi
     *  yang telah menyelesaikan pesanan serta me-unlink masing-masing objek. 
     */ 
    public static void pesananSelesai(Room kamar){
-       kamar.getPesanan().setStatusSelesai(true);
-       kamar.getPesanan().setStatusDiproses(false);
-       kamar.setPesanan().setStatusAktif(false);
-       kamar.setPesanan(null);
-       roomLepasPesanan(kamar);    
+       //kamar.getPesanan().setStatusSelesai(true);
+       //kamar.getPesanan().setStatusDiproses(false);
+       //kamar.setPesanan().setStatusAktif(false);
+       //kamar.setPesanan(null);
+       //roomLepasPesanan(kamar);
+       kamar.setStatusKamar(StatusKamar.VACANT);
     }
     
     /**
      * Method ini untuk mengubah status pesanan dan status room 
      * yang telah membatalkan pesanan serta me-unlink masing-masing objek. 
      */
-   public static void pesananDibatalkan(Pesanan pesan){
-       roomLepasPesanan(pesan.getRoom());
+   public static void pesananDibatalkan(Pesanan pesan)
+   {
+       pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
+       //roomLepasPesanan(pesan.getRoom());
        pesan.setStatusSelesai(false);
        pesan.setStatusDiproses(false);
        pesan.setRoom(null);
-     
+       pesan.setStatusAktif(false);
     }
     
     /**
@@ -81,9 +89,10 @@ public class Administrasi
      * yang telah menyelesaikan pesanan serta me-unlink masing-masing objek. 
      */
    public static void pesananSelesai(Pesanan pesan){
-       roomLepasPesanan(pesan.getRoom());
+       //roomLepasPesanan(pesan.getRoom());
        pesan.setStatusSelesai(true);
        pesan.setStatusDiproses(false);
        pesan.setRoom(null);
+       pesan.setStatusAktif(false);
     } 
 }

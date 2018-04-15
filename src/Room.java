@@ -13,34 +13,38 @@ public abstract class Room
     //private boolean isAvailable;
     protected double dailyTariff;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
+    //private Pesanan pesan;
  
     
     public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         this.hotel=hotel;
         this.nomor_kamar=nomor_kamar;
-        this.status_kamar=status_kamar;
-
+        this.status_kamar=StatusKamar.VACANT;
     }
     
-    public Hotel getHotel(){
+    public Hotel getHotel()
+    {
         return hotel;
     }
 
-    public String getNomorKamar(){
+    public String getNomorKamar()
+    {
         return nomor_kamar;
     }
 
-    public double getDailyTariff(){
+    public double getDailyTariff()
+    {
         return dailyTariff;
     }
-
+    /*
     public Pesanan getPesanan(){
         return pesan;
     }
+    */
 
-    public StatusKamar getStatusKamar(){
+    public StatusKamar getStatusKamar()
+    {
         return status_kamar;
     }
 
@@ -54,21 +58,38 @@ public abstract class Room
         this.nomor_kamar=nomor_kamar;
     }
     
-    public void setDailyTariff (double dailytariff){
-        dailyTariff=dailytariff;
+    public void setDailyTariff (double dailyTariff){
+        this.dailyTariff=dailyTariff;
     }
     
     public void setStatusKamar(StatusKamar status_kamar){
         this.status_kamar=status_kamar;
     }
 
-    public String toString() {
+    public String toString()
+    {
+        if(DatabasePesanan.getPesanan(this) == null)
+        {
+            return "Nama hotel      : " + getHotel().getNama() +
+                    "\nTipe kamar   : " + getTipeKamar() +
+                    "\nHarga        : " + getDailyTariff() +
+                    "\nStatus kamar : " + getStatusKamar();
+        }
+        else
+        {
+            return "Nama hotel  : " + getHotel().getNama() +
+                    "\nTipe kamar   : " + getTipeKamar() +
+                    "\nHarga        : " + getDailyTariff() +
+                    "\nStatus kamar : " + getStatusKamar() +
+                    "\nPelanggan    : " + DatabasePesanan.getPesanan(this).getPelanggan();
+        }
     }
 
-
+    /*
     public void setPesanan (Pesanan pesan){
         this.pesan=pesan;
     }
+    */
 
     /*
     public String toString(){
@@ -98,6 +119,4 @@ public abstract class Room
         System.out.println("Tipe Kamar :" + status_kamar);
     }
     */
-    
-    
-}
+
