@@ -9,12 +9,11 @@ import java.util.GregorianCalendar;
 public class JHotel
 {
     public static void main (String args[])
-    {   
-        Customer cust1 = new Customer(1506673782, "WisnuWicaksono", new GregorianCalendar(1996,5,6).getTime()); 
-        cust1.getDOB();
- 
+    {
+        
+
         /*
-        Lokasi lokasi1 = new Lokasi (20,20, "Depok");
+        Lokasi lokasi1 = new Loka(20,20, "Depok");
         Customer customer1 = new Customer(15299,"Wisnu");
         Hotel hotel1 = new Hotel("Hotelku",lokasi1,5);
         Room room1 = new SingleRoom(hotel1,"222",true,StatusKamar.VACANT);

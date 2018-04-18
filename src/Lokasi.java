@@ -70,9 +70,9 @@ public class Lokasi
   
     
     public String toString(){
-        return "\nKoordinat X       : "+ x_coord+
-               "\nKoordinat Y       : "+ y_coord+
-               "\nDeskripsi lokasi  : "+ deskripsiLokasi;
+        return "\nKoordinat X       : "+ getX()+
+               "\nKoordinat Y       : "+ getY()+
+               "\nDeskripsi lokasi  : "+ getDeskripsi();
     }
     
   

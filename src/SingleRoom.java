@@ -12,11 +12,9 @@ public class SingleRoom extends Room {
      * Constructor for objects of class SingleRoom
      */
   
-    public SingleRoom(Hotel hotel,String nomor_kamar,boolean isAvailable, StatusKamar status_kamar)
+    public SingleRoom(Hotel hotel,String nomor_kamar, StatusKamar status_kamar)
     {
-        super(hotel,nomor_kamar,isAvailable, status_kamar);
-        
-        
+        super(hotel,nomor_kamar, status_kamar);
     }
 
   

@@ -70,13 +70,13 @@ public class Hotel
       {
           this.bintang=bintang;
       }
-      
-       public String toString()
-       {
-        return "\nKoordinat X       : "+ nama+
-               "\nKoordinat Y       : "+ lokasi.getDeskripsi()+
-               "\nDeskripsi lokasi  : "+ bintang;
-        }
+
+    public String toString()
+    {
+        return "Nama Hotel \t\t:" + getNama()
+                +"\nBintang Hotel \t\t:" + getBintang()
+                + "\nLokasi Hotel \t\t:" + getLokasi().getDeskripsi();
+    }
       
       
       /*

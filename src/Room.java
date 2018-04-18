@@ -80,8 +80,8 @@ public abstract class Room
             return "Nama hotel  : " + getHotel().getNama() +
                     "\nTipe kamar   : " + getTipeKamar() +
                     "\nHarga        : " + getDailyTariff() +
-                    "\nStatus kamar : " + getStatusKamar() +
-                    "\nPelanggan    : " + DatabasePesanan.getPesanan(this).getPelanggan();
+                    "\nStatus kamar : " + getStatusKamar().toString() +
+                    "\nPelanggan    : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
     }
 

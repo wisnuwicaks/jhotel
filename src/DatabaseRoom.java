@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class DatabaseRoom
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
     public static ArrayList<Room> getRoomDatabase()
     {
@@ -17,24 +17,26 @@ public class DatabaseRoom
 
     public static boolean addRoom (Room baru)
     {
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(!kamar.getHotel().equals(baru.getHotel()) &&
-                    !kamar.getNomorKamar().equals(baru.getNomorKamar()))
-            {
-                ROOM_DATABASE.add(baru);
-                return true;
+        if(baru.getHotel() != null) {
+            for (Room kamar : ROOM_DATABASE) {
+                if(kamar.getHotel().equals(baru.getHotel()))
+                {
+                    if(baru.getNomorKamar().compareTo(kamar.getNomorKamar()) == 0)
+                    {
+                        return false;
+                    }
+                }
             }
+            ROOM_DATABASE.add(baru);
+            return true;
         }
-
-        return false;
+        else return false;
     }
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {
         for(Room kamar : ROOM_DATABASE)
         {
-            if(kamar.getHotel().equals(hotel) &&
-                    kamar.getNomorKamar().equals(nomor_kamar))
+            if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
             {
                 return kamar;
             }
@@ -44,7 +46,7 @@ public class DatabaseRoom
     }
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
+        ArrayList<Room> tempRoom = new ArrayList<>();
 
         for(Room kamar : ROOM_DATABASE)
         {
@@ -58,7 +60,7 @@ public class DatabaseRoom
     }
     public static ArrayList<Room> getVacantRooms()
     {
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
+        ArrayList<Room> tempRoom = new ArrayList<>();
 
         for(Room kamar : ROOM_DATABASE)
         {
@@ -78,10 +80,9 @@ public class DatabaseRoom
             if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
             {
                 Administrasi.pesananDibatalkan(kamar);
-                if(ROOM_DATABASE.remove(kamar))
-                {
-                    return true;
-                }
+                ROOM_DATABASE.remove(kamar);
+                return true;
+
             }
         }
         return false;

@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.regex.*;
+import java.util.*;
 import java.text.*;
 /**
  * Write a description of class Customer here.
@@ -16,6 +17,7 @@ public class Customer
     protected String email;
     protected Date dob;
 
+    SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     /**
      * Constructor dari class Customer.
      *
@@ -28,7 +30,7 @@ public class Customer
     {
         this.id=DatabaseCustomer.getLastCustomerID() + 1;
         this.nama=nama;
-        dob = new Date(tahun,bulan,tanggal);
+        this.dob = new GregorianCalendar(tahun, bulan - 1, tanggal).getTime();
     }
     
     public Customer(String nama, Date dob){
@@ -52,9 +54,9 @@ public class Customer
     
     public Date getDOB()
     {
-        DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
-        String output = formatter.format(dob);
-        System.out.print(output);   
+        //DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        //String output = formatter.format(dob);
+        //System.out.print(output);
         return dob;
     }
     public void setID(int id)
@@ -93,12 +95,12 @@ public class Customer
     
     public String toString()
     {
-            if (DatabasePesanan.getPesanan(this)!=null)
+            if (DatabasePesanan.getPesananAktif(this)!=null)
             {
             return "\nCustomer ID       : "+getID()+
                    "\nNama              : "+getNama()+
                    "\nEmail             : "+getEmail()+
-                   "\nDate of Birth     : "+getDOB()+
+                   "\nDate of Birth     : "+dobformat.format(getDOB())+
                    "\nBooking sedang dalam proses";
             }
             else
@@ -106,7 +108,7 @@ public class Customer
              return"\nCustomer ID       : "+getID()+
                     "\nNama              : "+getNama()+
                     "\nEmail             : "+getEmail()+
-                    "\nDate of Birth     : "+getDOB()+
+                    "\nDate of Birth     : "+dobformat.format(getDOB())+
                     "\nBooking sedang dalam proses";
             }
     }

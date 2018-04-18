@@ -18,7 +18,7 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
-    private Pesanan pesan;
+    //private Pesanan pesan;
 
     
     //Ini adalah constuctor class Pesanan
@@ -27,8 +27,7 @@ public class Pesanan
         this.pelanggan=pelanggan;
         this.jumlahHari=jumlahHari;
         isAktif=true;
-        tanggalPesan=new Date();
-        id = DatabasePesanan.getLastPesananID() + 1;
+        this.id= DatabasePesanan.getLastPesananID() + 1;
         //tanggalPesan = new Date(tahun,bulan,hari);
         //this.biaya=(kamar.getDailyTariff())*jumlahHari;
     }
