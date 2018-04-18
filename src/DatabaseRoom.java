@@ -15,22 +15,19 @@ public class DatabaseRoom
         return ROOM_DATABASE;
     }
 
-    public static boolean addRoom (Room baru)
-    {
-        if(baru.getHotel() != null) {
+    public static boolean addRoom (Room baru) {
+
             for (Room kamar : ROOM_DATABASE) {
-                if(kamar.getHotel().equals(baru.getHotel()))
-                {
-                    if(baru.getNomorKamar().compareTo(kamar.getNomorKamar()) == 0)
-                    {
-                        return false;
-                    }
+                if (kamar.getHotel() == baru.getHotel() && kamar.getNomorKamar() == baru.getNomorKamar()) {
+
+                    return false;
                 }
             }
+
             ROOM_DATABASE.add(baru);
             return true;
-        }
-        else return false;
+
+
     }
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {

@@ -16,11 +16,11 @@ public abstract class Room
     //private Pesanan pesan;
  
     
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel=hotel;
         this.nomor_kamar=nomor_kamar;
-        this.status_kamar=StatusKamar.VACANT;
+        //this.status_kamar=StatusKamar.VACANT;
     }
     
     public Hotel getHotel()
@@ -70,7 +70,7 @@ public abstract class Room
     {
         if(DatabasePesanan.getPesanan(this) == null)
         {
-            return "Nama hotel      : " + getHotel().getNama() +
+            return "Nama hotel      : " + getHotel().getNama()+
                     "\nTipe kamar   : " + getTipeKamar() +
                     "\nHarga        : " + getDailyTariff() +
                     "\nStatus kamar : " + getStatusKamar();
@@ -80,7 +80,7 @@ public abstract class Room
             return "Nama hotel  : " + getHotel().getNama() +
                     "\nTipe kamar   : " + getTipeKamar() +
                     "\nHarga        : " + getDailyTariff() +
-                    "\nStatus kamar : " + getStatusKamar().toString() +
+                    "\nStatus kamar : " + getStatusKamar() +
                     "\nPelanggan    : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
     }

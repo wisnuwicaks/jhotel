@@ -73,9 +73,9 @@ public class Hotel
 
     public String toString()
     {
-        return "Nama Hotel \t\t:" + getNama()
-                +"\nBintang Hotel \t\t:" + getBintang()
-                + "\nLokasi Hotel \t\t:" + getLokasi().getDeskripsi();
+        return "Nama Hotel \t\t\t:" + getNama() +
+                "\nBintang Hotel \t\t:" + getBintang()+
+                "\nLokasi Hotel \t\t:" + getLokasi().getDeskripsi()+"\n";
     }
       
       

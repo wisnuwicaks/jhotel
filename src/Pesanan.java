@@ -170,23 +170,32 @@ public class Pesanan
     
     public String toString()
     {
+
         String final_status = "KOSONG";
-            if(isDiproses == true && isSelesai==false)
-            {
-                final_status="DIPROSES";
-            }
-            else if(isDiproses==false && isSelesai==false)
-            {
-                final_status="KOSONG";
-            }
-            else if(isDiproses==false && isSelesai==true)
-            {
-                final_status="SELESAI";
-            }
-            return  "Dibuat oleh "+pelanggan.getNama()+
-                    "Proses booking untuk"+kamar.getHotel()+
-                    "kamar nomor "+kamar.getNomorKamar()+
-                    ".Status : "+final_status+".";
+        if(this.isDiproses && !this.isSelesai){
+            final_status = "DIPROSES";
+        }
+        else if(!this.isDiproses && !this.isSelesai){
+            final_status = "KOSONG";
+        }
+        else if(!this.isDiproses && this.isSelesai){
+            final_status = "SELESAI";
+        }
+
+        if(kamar != null){
+            return "Dibuat oleh " + getPelanggan().getNama()
+                    + ". Proses booking untuk " + getRoom().getHotel().getNama()
+                    + " kamar nomor " + getRoom().getNomorKamar()
+                    + " dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
+                    + ". Status: " + final_status + ".\n";
+        } else{
+            return "Dibuat oleh " + getPelanggan().getNama()
+                    + ". Proses booking null "
+                    + "kamar nomor null "
+                    + "dengan tipe kamar yang diinginkan null "
+                    + ". Status: " + final_status + ".";
+        }
+
     }
     
     /*

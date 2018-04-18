@@ -21,20 +21,17 @@ public class DatabasePesanan
     {
         return LAST_PESANAN_ID;
     }
-    public static boolean addPesanan(Pesanan baru)
-    {
-        if(getPesananAktif(baru.getPelanggan()) == null)
-        {
-            PESANAN_DATABASE.add(baru);
-            LAST_PESANAN_ID = baru.getID();
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    public static boolean addPesanan(Pesanan baru) {
+        for (Pesanan pesan : PESANAN_DATABASE) {
+            if (pesan.getStatusAktif() && pesan.getID() == baru.getID()) {
+                return false;
+            }
 
+        }
+        PESANAN_DATABASE.add(baru);
+        LAST_PESANAN_ID=baru.getID();
+        return true;
+    }
     public static Pesanan getPesanan(int id)
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
