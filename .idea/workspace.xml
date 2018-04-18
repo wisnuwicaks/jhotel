@@ -1,82 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1be884ad-f0d6-4375-ac82-cba8e11ed25c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Administrasi.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Customer.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabaseCustomer.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabaseHotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabasePesanan.class" afterPath="$PROJECT_DIR$/out/production/JHotel/DatabasePesanan.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabasePesanan.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabaseRoom.class" afterPath="$PROJECT_DIR$/out/production/JHotel/DatabaseRoom.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DatabaseRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/DoubleRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Hotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/JHotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Lokasi.class" afterPath="$PROJECT_DIR$/out/production/JHotel/Lokasi.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Lokasi.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Pesanan.class" afterPath="$PROJECT_DIR$/out/production/JHotel/Pesanan.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Pesanan.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/PremiumRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/README.TXT" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Room.class" afterPath="$PROJECT_DIR$/out/production/JHotel/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/Room.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/SingleRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/StatusKamar.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/TipeKamar.class" afterPath="$PROJECT_DIR$/out/production/JHotel/TipeKamar.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/TipeKamar.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/JHotel/package.bluej" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Administrasi.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Administrasi.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Administrasi.java" afterPath="$PROJECT_DIR$/src/Administrasi.java" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" afterPath="$PROJECT_DIR$/src/Customer.java" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.java" afterPath="$PROJECT_DIR$/src/DatabaseCustomer.java" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseHotel.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseHotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseHotel.java" afterPath="$PROJECT_DIR$/src/DatabaseHotel.java" />
-      <change beforePath="$PROJECT_DIR$/src/DatabasePesanan.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabasePesanan.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabasePesanan.java" afterPath="$PROJECT_DIR$/src/DatabasePesanan.java" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRoom.java" afterPath="$PROJECT_DIR$/src/DatabaseRoom.java" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleRoom.java" afterPath="$PROJECT_DIR$/src/DoubleRoom.java" />
-      <change beforePath="$PROJECT_DIR$/src/Hotel.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Hotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Hotel.java" afterPath="$PROJECT_DIR$/src/Hotel.java" />
-      <change beforePath="$PROJECT_DIR$/src/JHotel.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/JHotel.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/JHotel.java" afterPath="$PROJECT_DIR$/src/JHotel.java" />
-      <change beforePath="$PROJECT_DIR$/src/Lokasi.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Lokasi.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Lokasi.java" afterPath="$PROJECT_DIR$/src/Lokasi.java" />
-      <change beforePath="$PROJECT_DIR$/src/Pesanan.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Pesanan.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Pesanan.java" afterPath="$PROJECT_DIR$/src/Pesanan.java" />
-      <change beforePath="$PROJECT_DIR$/src/PremiumRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/PremiumRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/PremiumRoom.java" afterPath="$PROJECT_DIR$/src/PremiumRoom.java" />
-      <change beforePath="$PROJECT_DIR$/src/README.TXT" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Room.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Room.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" afterPath="$PROJECT_DIR$/src/Room.java" />
-      <change beforePath="$PROJECT_DIR$/src/SingleRoom.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/SingleRoom.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/SingleRoom.java" afterPath="$PROJECT_DIR$/src/SingleRoom.java" />
-      <change beforePath="$PROJECT_DIR$/src/StatusKamar.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/StatusKamar.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/TipeKamar.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/TipeKamar.ctxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/TipeKamar.java" afterPath="$PROJECT_DIR$/src/TipeKamar.java" />
-      <change beforePath="$PROJECT_DIR$/src/package.bluej" afterPath="" />
-    </list>
+    <list default="true" id="1be884ad-f0d6-4375-ac82-cba8e11ed25c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/src/JHotel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -940,6 +865,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="94" column="4" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DatabaseCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -953,20 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="94" column="4" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JHotel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
