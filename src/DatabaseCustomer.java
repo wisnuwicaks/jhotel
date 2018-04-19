@@ -21,14 +21,17 @@ import java.util.ArrayList;
             return LAST_CUSTOMER_ID;
         }
 
-        public static boolean addCustomer(Customer baru)
+        public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
         {
-            for(Customer cust : CUSTOMER_DATABASE){
-                if(baru.getID() == cust.getID()){
-                    return false;
+            for(Customer pelanggan : CUSTOMER_DATABASE)
+            {
+                if(pelanggan.getID() == baru.getID() ||
+                        pelanggan.getEmail().equals(baru.getEmail()))
+                {
+                    throw new PelangganSudahAdaException(pelanggan);
+                    //return false;
                 }
             }
-
             CUSTOMER_DATABASE.add(baru);
             LAST_CUSTOMER_ID = baru.getID();
             return true;
@@ -42,25 +45,31 @@ import java.util.ArrayList;
             return null;
         }
 
-        public static boolean removeCustomer(int id)
+        public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {
-            for(Customer cust : CUSTOMER_DATABASE)
+            for(Customer pelanggan : CUSTOMER_DATABASE)
             {
-                if(cust.getID() == id)
+                if(pelanggan.getID() == id)
                 {
-                    for(Pesanan cari2 : DatabasePesanan.getPesananDatabase()){
-                        if(cari2.getPelanggan().equals(cust))
-                        {
-                            DatabasePesanan.removePesanan(cari2);
-                        }
+                    try
+                    {
+                        DatabasePesanan.removePesanan(
+                                DatabasePesanan.getPesananAktif(pelanggan));
+                    }
+                    catch(PesananTidakDitemukanException a)
+                    {
+                        throw new PelangganTidakDitemukanException(id);
                     }
 
-                    CUSTOMER_DATABASE.remove(cust);
-                    return true;
+                    if(CUSTOMER_DATABASE.remove(pelanggan))
+                    {
+                        return true;
+                    }
                 }
             }
 
-            return false;
+            throw new PelangganTidakDitemukanException(id);
+            //return false;
         }
 
 

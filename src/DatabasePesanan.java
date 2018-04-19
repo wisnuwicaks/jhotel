@@ -21,10 +21,13 @@ public class DatabasePesanan
     {
         return LAST_PESANAN_ID;
     }
-    public static boolean addPesanan(Pesanan baru) {
-        for (Pesanan pesan : PESANAN_DATABASE) {
+
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException {
+        for (Pesanan pesan : PESANAN_DATABASE)
+        {
             if (pesan.getStatusAktif() && pesan.getID() == baru.getID()) {
-                return false;
+                //return false;
+                throw new PesananSudahAdaException(baru);
             }
 
         }
@@ -47,11 +50,11 @@ public class DatabasePesanan
 
     public static Pesanan getPesanan(Room kamar)
     {
-        for(Pesanan pesan : PESANAN_DATABASE)
+        for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if(pesan.getRoom().equals(kamar))
+            if(pesanan.getRoom().equals(kamar))
             {
-                return pesan;
+                return pesanan;
             }
         }
 
@@ -70,19 +73,33 @@ public class DatabasePesanan
         return null;
     }
 
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
     {
-        for (Pesanan hapus : PESANAN_DATABASE)
+        for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if(pesan.equals(hapus))
+            if(pesanan.equals(pesan))
             {
-                if(pesan.getRoom() != null) Administrasi.pesananDibatalkan(pesan);
-                else if(pesan.getStatusAktif() == true) pesan.setStatusAktif(false);
-                PESANAN_DATABASE.remove(hapus);
-                return true;
+                if(pesanan.getRoom() != null)
+                {
+                    Administrasi.pesananDibatalkan(pesanan);
+                }
+                else
+                {
+                    if(pesanan.getStatusAktif())
+                    {
+                        pesanan.setStatusAktif(false);
+                    }
+                }
+
+                if(PESANAN_DATABASE.remove(pesanan))
+                {
+                    return true;
+                }
             }
         }
-        return false;
+
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
+        //return false;
     }
     /*
     public static void pesananDibatalkan(Pesanan pesan)
