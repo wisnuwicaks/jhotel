@@ -2,11 +2,6 @@ public class PelangganSudahAdaException extends Exception
 {
     private Customer pelanggan_error;
 
-    /**
-     * Constructor dari kelas exception PelangganSudahAda, menginisialisasikan nilai dari input.
-     * @param pelanggan_input nilai pesanan yang dicek.
-     */
-
     public PelangganSudahAdaException(Customer pelanggan_input)
     {
         super("Pelanggan dengan data : ");

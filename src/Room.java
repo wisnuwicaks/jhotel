@@ -70,14 +70,14 @@ public abstract class Room
     {
         if(DatabasePesanan.getPesanan(this) == null)
         {
-            return "Nama hotel      : " + getHotel().getNama()+
+            return "\nNama hotel    : " + getHotel().getNama()+
                     "\nTipe kamar   : " + getTipeKamar() +
                     "\nHarga        : " + getDailyTariff() +
                     "\nStatus kamar : " + getStatusKamar();
         }
         else
         {
-            return "Nama hotel  : " + getHotel().getNama() +
+            return "\nNama hotel    : " + getHotel().getNama() +
                     "\nTipe kamar   : " + getTipeKamar() +
                     "\nHarga        : " + getDailyTariff() +
                     "\nStatus kamar : " + getStatusKamar() +

@@ -50,14 +50,12 @@ public class DatabasePesanan
 
     public static Pesanan getPesanan(Room kamar)
     {
-        for(Pesanan pesanan : PESANAN_DATABASE)
-        {
-            if(pesanan.getRoom().equals(kamar))
-            {
-                return pesanan;
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if(kamar.equals(pesan.getRoom())==true){
+                return pesan;
             }
         }
-
         return null;
     }
     

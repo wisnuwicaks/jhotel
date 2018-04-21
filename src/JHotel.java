@@ -4,12 +4,92 @@ import java.util.GregorianCalendar;
  * Write a description of class JHotel here.
  *
  * @author Wisnu Wicaksono
- * @version 1 Maret 2018
+ * @version  21 April 2018
  */
 public class JHotel
 {
     public static void main (String args[])
     {
+        try {
+            DatabaseCustomer.addCustomer(new Customer("Wisnu", 1900, 1, 9, "wisnu@gmail.com"));
+            DatabaseCustomer.addCustomer(new Customer("Wicak", 2000, 3, 4, "wicak@gmail.com"));
+            DatabaseCustomer.addCustomer(new Customer("Sono", 2018, 6, 10, "sono@gmail.com"));
+            DatabaseCustomer.addCustomer(new Customer("Sono", 2018, 6, 10, "sono@gmail.com"));
+        }
+        catch(PelangganSudahAdaException e){
+            System.out.println("---TES PELANGGAN SUDAH ADA---");
+            System.out.println(e.getPesan());
+        }
+
+        try {
+            Lokasi a = new Lokasi(102, 320, "Depok City");
+            DatabaseHotel.addHotel(new Hotel("AHotel", new Lokasi(3, 3, "Bandung City"), 5));
+            DatabaseHotel.addHotel(new Hotel("BHotel", new Lokasi(10, 10, "Medan City"), 100));
+            DatabaseHotel.addHotel(new Hotel("CHotel", a, 1));
+            DatabaseHotel.addHotel(new Hotel("CHotel", a, 1));
+        } catch(HotelSudahAdaException e){
+            System.out.println("---TES HOTEL SUDAH---");
+            System.out.println(e.getPesan());
+        }
+
+        try {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "K101"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "S202"));
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(3), "GK303"));
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "K306"));
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "K306"));
+
+        } catch(RoomSudahAdaException e){
+            System.out.println("---TES ROOM SUDAH ADA---");
+            System.out.println(e.getPesan());
+        }
+
+        try {
+            DatabasePesanan.addPesanan(new Pesanan(10, DatabaseCustomer.getCustomer(1)));
+            DatabasePesanan.addPesanan(new Pesanan(11, DatabaseCustomer.getCustomer(2)));
+            DatabasePesanan.addPesanan(new Pesanan(12, DatabaseCustomer.getCustomer(3)));
+            DatabasePesanan.addPesanan(new Pesanan(11, DatabaseCustomer.getCustomer(3)));
+        } catch(PesananSudahAdaException e){
+            System.out.println("---TES PESANAN SUDAH ADA---");
+            System.out.println(e.getPesan());
+        }
+
+        try{
+            DatabaseCustomer.removeCustomer(100);
+        } catch(PelangganTidakDitemukanException e){
+            System.out.println("---TES PELANGGAN TIDAK DITEMUKAN---");
+            System.out.println(e.getPesan());
+        }
+        Customer cust = new Customer("Ayeee",1900,5,21,"Ayeee@gmail.com");
+        Pesanan pesan = new Pesanan(32,cust);
+        try{
+            DatabasePesanan.removePesanan(pesan);
+        } catch(PesananTidakDitemukanException e){
+            System.out.println("---TES PESANAN TIDAK DITEMUKAN---");
+            System.out.println(e.getPesan());
+        }
+
+        try{
+            DatabaseHotel.removeHotel(29);
+        } catch(HotelTidakDitemukanException e){
+            System.out.println("---TES HOTEL TIDAK DITEMUKAN---");
+            System.out.println(e.getPesan());
+        }
+
+        try{
+            DatabaseRoom.removeRoom(DatabaseHotel.getHotel(2),"K1000");
+        } catch(RoomTidakDitemukanException e){
+            System.out.println("---TES ROOM TIDAK DITEMUKAN---");
+            System.out.println(e.getPesan());
+        }
+
+        System.out.println("===========HASIL==========");
+
+        System.out.println(DatabaseCustomer.getCustomerDatabase());
+        System.out.println(DatabaseHotel.getHotelDatabase());
+        System.out.println(DatabaseRoom.getRoomDatabase());
+        System.out.println(DatabasePesanan.getPesananDatabase());
+        /*
         System.out.println("\n\nTry-Catch 1 \n");
 
 

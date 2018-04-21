@@ -193,7 +193,7 @@ public class Pesanan
                     + ". Proses booking null "
                     + "kamar nomor null "
                     + "dengan tipe kamar yang diinginkan null "
-                    + ". Status: " + final_status + ".";
+                    + ". Status: " + final_status + ".\n";
         }
 
     }
