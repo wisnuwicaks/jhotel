@@ -13,11 +13,11 @@ public class Customer
 {
     
     // instance variables class Customer
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
-
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     /**
      * Constructor dari class Customer.
@@ -27,19 +27,21 @@ public class Customer
      * @param bulan  bulan lahir pelanggan
      * @param tahun  tahun lahir pelanggan
      */
-    public Customer(String nama, int tahun, int bulan, int tanggal, String email)
+    public Customer(String nama, int tahun, int bulan, int tanggal, String email, String password)
     {
         this.id=DatabaseCustomer.getLastCustomerID() + 1;
         this.nama=nama;
         this.dob = new GregorianCalendar(tahun, bulan-1, tanggal+1).getTime();
         this.email=email;
+        this.password=password;
     }
     
-    public Customer(String nama, Date dob, String email){
+    public Customer(String nama, Date dob, String email, String password){
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
         this.email=email;
+        this.password=password;
     }
 
     public int getID()
@@ -61,6 +63,9 @@ public class Customer
         //String output = formatter.format(dob);
         //System.out.print(output);
         return dob;
+    }
+    public String getPassword(){
+        return password;
     }
     public void setID(int id)
     {
@@ -95,7 +100,9 @@ public class Customer
     {   
         this.dob=dob;
     }
-    
+    public void setPassword(String password){
+        this.password=password;
+    }
     public String toString()
     {
             if (DatabasePesanan.getPesananAktif(this)!=null)

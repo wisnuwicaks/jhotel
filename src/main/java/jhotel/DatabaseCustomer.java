@@ -45,7 +45,13 @@ import java.util.ArrayList;
             }
             return null;
         }
-
+        public static Customer getCustomerLogin(String email, String password){
+            for(Customer cust : CUSTOMER_DATABASE){
+                if (cust.getEmail().equals(email) && cust.getPassword().equals(password))
+                    return cust;
+            }
+            return null;
+        }
         public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {
             for(Customer pelanggan : CUSTOMER_DATABASE)

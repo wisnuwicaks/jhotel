@@ -14,6 +14,25 @@ public class JHotel
 {
     public static void main (String args[])
     {
+        try{
+            DatabaseHotel.addHotel(new Hotel("DepokHotel", new Lokasi(1, 1, "Depok City"), 5));
+            DatabaseHotel.addHotel(new Hotel("JakartaHotel", new Lokasi(2, 2, "Jakarta City"), 5));
+        }
+        catch(HotelSudahAdaException a)
+        {
+            a.getPesan();
+        }
+
+        try
+        {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S103"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S102"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S101"));
+        }
+        catch(RoomSudahAdaException a)
+        {
+            a.getPesan();
+        }
         SpringApplication.run(JHotel.class, args);
         /*
         try {
