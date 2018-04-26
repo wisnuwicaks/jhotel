@@ -31,7 +31,7 @@ public class Customer
     {
         this.id=DatabaseCustomer.getLastCustomerID() + 1;
         this.nama=nama;
-        this.dob = new GregorianCalendar(tahun, bulan - 1, tanggal).getTime();
+        this.dob = new GregorianCalendar(tahun, bulan-1, tanggal+1).getTime();
         this.email=email;
     }
     
