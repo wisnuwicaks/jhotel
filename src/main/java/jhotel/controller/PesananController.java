@@ -1,15 +1,24 @@
 package jhotel.controller;
+
 import jhotel.*;
 import org.springframework.web.bind.annotation.*;
+
 @RestController
-public class PesananController {
-    @RequestMapping("pesanancustomer/id")
-    public Pesanan pesananCust(@PathVariable int id_customer){
-        Pesanan pesan = DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
-        return pesan;
+public class PesananController
+{
+    @RequestMapping(value = "/pesanancustomer/{id_customer}", method = RequestMethod.GET)
+    public Pesanan pesananCust(@PathVariable int id_customer)
+    {
+        return DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
     }
 
-    @RequestMapping("")
+    @RequestMapping(value = "/pesanan/{id_pesanan}", method = RequestMethod.GET)
+    public Pesanan getPesanan(@PathVariable int id_pesanan)
+    {
+        return DatabasePesanan.getPesanan(id_pesanan);
+    }
+
+    @RequestMapping(value = "/bookpesanan", method = RequestMethod.POST)
     public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") int jumlah_hari,
                                @RequestParam(value="id_customer") int id_customer,
                                @RequestParam(value="id_hotel") int id_hotel,
@@ -22,23 +31,18 @@ public class PesananController {
             a.getPesan();
         }
 
-        Pesanan pesanan = DatabasePesanan.getPesananAktif(
-                DatabaseCustomer.getCustomer(id_customer));
+        Pesanan pesanan = DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
 
         Room kamar = DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel), nomor_kamar);
 
         Administrasi.pesananDitugaskan(pesanan,kamar);
-        if(kamar != null)
-        {
-            pesanan.setBiaya();
-        }
-
         return pesanan;
-
     }
 
+
     @RequestMapping(value = "/cancelpesanan", method = RequestMethod.POST)
-    public Pesanan batalkanPesanan(@PathVariable int id_pesanan){
+    public Pesanan batalkanPesanan(@RequestParam(value="id_pesanan") int id_pesanan)
+    {
         Pesanan pesanan = DatabasePesanan.getPesanan(id_pesanan);
         if(pesanan!= null)
         {
@@ -46,8 +50,10 @@ public class PesananController {
         }
         return pesanan;
     }
+
     @RequestMapping(value = "/finishpesanan", method = RequestMethod.POST)
-    public Pesanan selesaiPesanan(@PathVariable int id_pesanan){
+    public Pesanan selesaikanPesanan(@RequestParam(value="id_pesanan") int id_pesanan)
+    {
         Pesanan pesanan = DatabasePesanan.getPesanan(id_pesanan);
         if(pesanan!= null)
         {
@@ -55,8 +61,4 @@ public class PesananController {
         }
         return pesanan;
     }
-
-
-
-
 }

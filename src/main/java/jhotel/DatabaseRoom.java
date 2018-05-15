@@ -1,10 +1,13 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseRoom here.
- *
+ * Ini adalah kelas yang berfungsi menyimpan data object dari kelas Room
+ * Kelas ini menampung object kelas Room dalam bentuk array list.
+ * Setiap terdapat object Room baru, maka akan ditambahkan ke DatabaseRoom dalam bentuk array list.
+ * Informasi yang disimpan adalah sesuai isi object Room yaitu nomor kamar dan id hotel.
  * @author Wisnu Wicaksono
- * @version 12 April 2018
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class DatabaseRoom
 {
@@ -44,7 +47,7 @@ public class DatabaseRoom
     }
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
-        ArrayList<Room> tempRoom = new ArrayList<>();
+        ArrayList<Room> tempRoom = new ArrayList<Room>();
 
         for(Room kamar : ROOM_DATABASE)
         {

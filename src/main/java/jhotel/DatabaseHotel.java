@@ -1,10 +1,13 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseHotel here.
- *
+ * Ini adalah kelas yang berfungsi menyimpan data informasi hotel dalam bentuk array list
+ * Kelas ini menampung object Hotel dalam bentuk array list.
+ * Setiap terdapat object Pesanan baru, maka akan ditambahkan ke DatabasePesanan bentuk array list dengan ID berdasarkan
+ * urutan penambahan hotel tersebut.
  * @author Wisnu Wicaksono
- * @version 1.0
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class DatabaseHotel
 {

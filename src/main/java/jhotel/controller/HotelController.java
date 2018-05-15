@@ -13,9 +13,8 @@ public class HotelController {
     }
 
     @RequestMapping(value = "/hotel/{id_hotel}")
-    public Hotel getHotel(int id_hotel){
-        Hotel hotel = DatabaseHotel.getHotel(id_hotel);
-        return hotel;
+    public Hotel getHotel(@PathVariable int id_hotel){
+        return DatabaseHotel.getHotel(id_hotel);
     }
 
 

@@ -2,18 +2,21 @@ package jhotel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
-//import java.util.Date;
-//import java.util.GregorianCalendar;
+
 /**
- * Write a description of class JHotel here.
- *
+ * Ini adalah kelas Main yang berfungi untuk menginisiasi object setiap kelas yang sudah ada seperti
+ * Customer, Hotel, serta menambahkan object tersebut ke dalam database.
+ * Kelas ini juga berfungsi untuk menjalankan bootrun sebagai SpringApplication.
  * @author Wisnu Wicaksono
- * @version  21 April 2018
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class JHotel
 {
+
     public static void main (String args[])
     {
+        /*
         try{
             DatabaseHotel.addHotel(new Hotel("DepokHotel", new Lokasi(1, 1, "Depok City"), 5));
             DatabaseHotel.addHotel(new Hotel("JakartaHotel", new Lokasi(2, 2, "Jakarta City"), 5));
@@ -32,6 +35,27 @@ public class JHotel
         catch(RoomSudahAdaException a)
         {
             a.getPesan();
+        }
+        */
+
+        try{
+            DatabaseHotel.addHotel(new Hotel("DepokHotel", new Lokasi(1, 1, "Depok City"), 5));
+
+        }
+        catch(HotelSudahAdaException e)
+        {
+            e.getPesan();
+        }
+
+        try
+        {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S103"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S102"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S101"));
+        }
+        catch(RoomSudahAdaException e)
+        {
+            e.getPesan();
         }
         SpringApplication.run(JHotel.class, args);
         /*

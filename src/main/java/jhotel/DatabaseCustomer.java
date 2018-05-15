@@ -1,10 +1,12 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseCustomer here.
- *
+ * Ini adalah kelas yang berfungsi untuk menyimpan data-data pelanggan dalam array.
+ * Setiap customer yang mendaftar akan mendapatkan ID terurut diawali dari 1 dan seterusnya.
+ * Kelas ini mengandung informasi mengenai object customer dan penanganan penambahan customer baru
  * @author Wisnu Wicaksono
- * @version 1 Maret 2018
+ * @version 9.0
+ * @since 14 April 2018
  */
 
     public class DatabaseCustomer
@@ -38,20 +40,27 @@ import java.util.ArrayList;
             return true;
         }
 
-        public static Customer getCustomer(int id){
-            for (Customer cust :
-                    CUSTOMER_DATABASE) {
-                if (cust.getID() == id) return cust;
+        public static Customer getCustomer(int id)
+        {
+            for (Customer cust : CUSTOMER_DATABASE)
+            {
+                if (cust.getID() == id)
+                {
+                    return cust;
+                }
             }
             return null;
         }
         public static Customer getCustomerLogin(String email, String password){
             for(Customer cust : CUSTOMER_DATABASE){
                 if (cust.getEmail().equals(email) && cust.getPassword().equals(password))
+                {
                     return cust;
+                }
             }
             return null;
         }
+
         public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {
             for(Customer pelanggan : CUSTOMER_DATABASE)
@@ -76,7 +85,7 @@ import java.util.ArrayList;
             }
 
             throw new PelangganTidakDitemukanException(id);
-            //return false;
+
         }
 
 

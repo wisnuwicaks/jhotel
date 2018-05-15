@@ -1,9 +1,11 @@
 package jhotel;
 /**
- * Write a description of class Hotel here.
- *
+ * Ini adalah kelas yang berfungsi untuk menginisasi data Hotel.
+ * Kelas Hotel akan membuat object berupa nama, lokasi, bintang hotel.
+ * Kelas ini juga berfungsi mencetak setiap kalo ingin ditampilkan mengenai object Hotel.
  * @author Wisnu Wicaksono
- * @version 1 Maret 2018
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class Hotel
 {

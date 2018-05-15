@@ -1,10 +1,14 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Menangani database pesanan
- *
+ * Ini adalah kelas yang berfungsi menyimpan data pesanan Customer
+ * Kelas ini menampung object kelas Pesanan dalam bentuk array list.
+ * Setiap terdapat object hotel baru, maka akan ditambahkan ke database dalam bentuk array list dengan ID berdasarkan
+ * urutan penambahan hotel tersebut.
+ * DatabasePesanan juga menyimpan status aktif pesanan.
  * @author Wisnu Wicaksono
- * @version 12 April 2018
+ * @version 9.0
+ * @since 14 April 2018
  */
 
 public class DatabasePesanan
@@ -23,17 +27,27 @@ public class DatabasePesanan
         return LAST_PESANAN_ID;
     }
 
-    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException {
-        for (Pesanan pesan : PESANAN_DATABASE)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
+    {
+        for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if (pesan.getStatusAktif() && pesan.getID() == baru.getID()) {
-                //return false;
-                throw new PesananSudahAdaException(baru);
+            if(pesanan.getID() == baru.getID())
+            {
+                if(pesanan.getStatusAktif() == true)
+                {
+                    throw new PesananSudahAdaException(pesanan);
+                    //return false;
+                }
+                else
+                {
+                    LAST_PESANAN_ID = baru.getID();
+                    PESANAN_DATABASE.add(baru);
+                    return true;
+                }
             }
-
         }
+        LAST_PESANAN_ID = baru.getID();
         PESANAN_DATABASE.add(baru);
-        LAST_PESANAN_ID=baru.getID();
         return true;
     }
     public static Pesanan getPesanan(int id)
@@ -51,24 +65,22 @@ public class DatabasePesanan
 
     public static Pesanan getPesananAktif(Room kamar)
     {
-        for (Pesanan pesan :
-                PESANAN_DATABASE) {
+        for (Pesanan pesan : PESANAN_DATABASE) {
             if(pesan.getRoom().equals(kamar) && pesan.getStatusAktif()){
                 return pesan;
             }
         }
         return null;
     }
-    
+
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
+
         for (Pesanan pesan : PESANAN_DATABASE)
-        {
-            if (pesan.getStatusAktif() == true && pesan.getPelanggan().equals(pelanggan) == true)
+            if (pesan.getStatusAktif() && pesan.getPelanggan().equals(pelanggan))
             {
                 return pesan;
             }
-        }
         return null;
     }
 

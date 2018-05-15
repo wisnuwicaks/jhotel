@@ -1,4 +1,11 @@
 package jhotel;
+/*
+ * sudah pernah dibuat sebelumnya
+ * @author Wisnu Wicaksono
+ * @version 9.0
+ * @exception PesananSudahAdaException kelas turunan Exception yang berfungsi untuk menangan bila Pesanan yang dibuat
+ * @since 14 April 2018
+ */
 public class PesananSudahAdaException extends Exception {
     private Pesanan pesanan_error;
     public PesananSudahAdaException (Pesanan pesanan_input){

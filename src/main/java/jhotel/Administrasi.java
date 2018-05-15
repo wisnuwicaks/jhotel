@@ -1,122 +1,108 @@
 package jhotel;
 /**
- * Write a description of class Administrasi here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Ini adalah kelas yang berfungsi untuk mengatur perihal administrasi
+ * yaitu pemesanan, pembatalan dan dan penyelesaian kamar hotel.
+ * @author Wisnu Wicaksono
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class Administrasi
 {
-   /**
-     * Method ini untuk memproses kamar yang akan di-assign.
-     */
-   public static void pesananDitugaskan(Pesanan pesan,Room kamar)
-   {
-       if(kamar.getStatusKamar()==StatusKamar.VACANT) {
-           pesan.setStatusAktif(false);
-           pesan.setStatusSelesai(false);
-           pesan.setStatusDiproses(true);
-           pesan.setRoom(kamar);
-           DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.BOOKED);
-       }
-       else {
-           pesan.setStatusAktif(false);
-       }
-       //kamar.setStatusKamar(StatusKamar.BOOKED);
-       //roomAmbilPesanan(pesan, kamar);
-    }
 
     /**
-     * Method ini untuk menyatakan bahwa status ruangan 
-     * sudah berubah menjadi “booked” dan “ter-link” 
-     * dengan objek Pesanan yang diberikan.
+     * method ini digunakan untuk membuat pesanan kamar dan mengeset kamar menjadi booked
+     * @param pesan parameter untuk menerima object room
+     * @param kamar parameter untuk menerima object pesanan
      */
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
+    {
+        if(pesan != null && kamar != null)
+        {
+            if(kamar.getStatusKamar() == StatusKamar.VACANT)
+            {
+                pesan.setStatusSelesai(false);
+                pesan.setStatusDiproses(true);
+                pesan.setRoom(kamar);
+                kamar.setStatusKamar(StatusKamar.BOOKED);
+                //roomAmbilPesanan(pesan, kamar);
+            }
+            else
+            {
+                pesan.setStatusAktif(false);
+            }
+
+        }
+    }
+
     /*
-   public static void roomAmbilPesanan(Pesanan pesan, Room kamar){
-       kamar.setStatusKamar(StatusKamar.BOOKED);
-       kamar.setPesanan(pesan);
+    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.BOOKED);
     }
-    */
 
-    
-    /**
-     * Method ini untuk menyatakan bahwa status ruangan 
-     * sudah berubah menjadi “vacant” dan “ter-link” 
-     * dengan objek Pesanan yang diberikan.
-     */
-   /*
-   public static void roomLepasPesanan(Room kamar){
-       kamar.setStatusKamar(StatusKamar.VACANT);
-       kamar.setPesanan(null);
+
+    public static void roomLepasPesanan(Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.VACANT);
     }
-    */
-    
+    /*
+
     /**
-     * Method ini untuk mengubah status pesanan dan status room 
-     * yang telah membatalkan pesanan serta me-unlink masing-masing objek. 
+     * method ini digunakan untuk membatalkan suatu pesanan
+     * @param kamar parameter untuk menerima object Room dan membuat room menjadi vacant
      */
-   public static void pesananDibatalkan(Room kamar){
-       //kamar.getPesanan().setStatusSelesai(false);
-       //kamar.getPesanan().setStatusDiproses(false);
-       //kamar.setPesanan().setStatusAktif(false);
-       //kamar.setPesanan(null);
-       //roomLepasPesanan(kamar);
-       Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
-       if(pesan != null) {
-           pesan.setStatusSelesai(false);
-           pesan.setStatusDiproses(false);
-           //pesan.setRoom(null);
-       }
-       DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
+    public static void pesananDibatalkan(Room kamar)
+    {
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
+        kamar.setStatusKamar(StatusKamar.VACANT);
+        //roomLepasPesanan(kamar);
     }
-    
-   /**
-    *  Method ini untuk mengubah status pesanan dan status room 
-    *  yang telah menyelesaikan pesanan serta me-unlink masing-masing objek. 
-    */ 
-   public static void pesananSelesai(Room kamar){
-       //kamar.getPesanan().setStatusSelesai(true);
-       //kamar.getPesanan().setStatusDiproses(false);
-       //kamar.setPesanan().setStatusAktif(false);
-       //kamar.setPesanan(null);
-       //roomLepasPesanan(kamar);
-       Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
-       if(pesan != null) {
-           pesan.setStatusSelesai(true);
-           pesan.setStatusDiproses(false);
-           //pesan.setRoom(null);
-       }
-       DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
-       //kamar.setStatusKamar(StatusKamar.VACANT);
-    }
-    
+
     /**
-     * Method ini untuk mengubah status pesanan dan status room 
-     * yang telah membatalkan pesanan serta me-unlink masing-masing objek. 
+     * method ini dijalankan bila status pesanan telah selesai dan akan mengeset kamar menjadi vacant
+     * @param kamar untuk menerima object berupa Room
      */
-   public static void pesananDibatalkan(Pesanan pesan)
-   {
-       DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
-       //pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
-       //roomLepasPesanan(pesan.getRoom());
-       pesan.setStatusSelesai(false);
-       pesan.setStatusDiproses(false);
-       pesan.setStatusAktif(false);
-       //pesan.setRoom(null);
+    public static void pesananSelesai(Room kamar)
+    {
+        //Pesanan pesan = new Pesanan();
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
+        kamar.setStatusKamar(StatusKamar.VACANT);
+
+        //roomLepasPesanan(kamar);
+    }
+
+    /**
+     * method ini dijalankan bila pesanan dibatalakan dan
+     * @param pesan untuk menerima object Pesanan yang dipassing
+     */
+    public static void pesananDibatalkan(Pesanan pesan)
+    {
+        //roomLepasPesanan(pesan.getRoom());
+        pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
 
     }
-    
-    /**
-     * Method ini untuk mengubah status pesanan dan status room 
-     * yang telah menyelesaikan pesanan serta me-unlink masing-masing objek. 
-     */
-   public static void pesananSelesai(Pesanan pesan){
-       //roomLepasPesanan(pesan.getRoom());
-       DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.VACANT);
-       pesan.setStatusSelesai(true);
-       pesan.setStatusDiproses(false);
-       pesan.setStatusAktif(false);
-       //pesan.setRoom(null);
 
-    } 
+    /**
+     * Method ini dijalankan bila pesanan status sudah selesai
+     * @param pesan menerima object berupa Pesanan
+     */
+    public static void pesananSelesai(Pesanan pesan)
+    {
+        //roomLepasPesanan(pesan.getRoom());
+        pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
+
+    }
+
 }

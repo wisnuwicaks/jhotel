@@ -1,22 +1,21 @@
 package jhotel;
 /**
- * Write a description of class DoubleRoom here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Ini adalah kelas turunan dari kelas Room yaitu menyediakan tipe kamar DoubleRoom
+ * @author Wisnu Wicaksono
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class DoubleRoom extends Room
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private Customer customer2;
-    private TipeKamar TIPE_KAMAR = TipeKamar.DOUBLE;
+    private static final TipeKamar TIPE_KAMAR = TipeKamar.DOUBLE;
 
     /**
      * Constructor for objects of class DoubleRoom
      */
     public DoubleRoom(Hotel hotel, String nomor_kamar)
     {
-        // initialise instance variables
         super(hotel, nomor_kamar);
     }
 
@@ -29,8 +28,8 @@ public class DoubleRoom extends Room
         return TIPE_KAMAR;
     }
     
-    public void setCustomer2(Customer customer2){
+    public void setCustomer2(Customer customer2)
+    {
         this.customer2=customer2;
-    
     }
 }

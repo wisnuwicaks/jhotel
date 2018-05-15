@@ -4,10 +4,13 @@ import java.util.regex.*;
 import java.util.*;
 import java.text.*;
 /**
- * Write a description of class Customer here.
- *
+ * Ini adalah kelas yang berfungsi untuk mengatur perihal customer
+ * yaitu menyimpan nama, tanggal lahir, email, passowrd serta ID customer.
+ * Kelas customer juga berfungsi untuk mencetak atau menampilkan informasi
+ * mengenai object Customer setiap kali diperlukan.
  * @author Wisnu Wicaksono
- * @version 1.0
+ * @version 9.0
+ * @since 14 April 2018
  */
 public class Customer
 {
@@ -35,7 +38,15 @@ public class Customer
         this.email=email;
         this.password=password;
     }
-    
+
+    /**
+     * Constructor dari class Customer.
+     *
+     * @param nama nama pelanggan
+     * @param dob  tanggal lahir pelanggan dalam forma Date
+     * @param email email pelanggan
+     * @param password lahir pelanggan
+     */
     public Customer(String nama, Date dob, String email, String password){
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
@@ -44,39 +55,72 @@ public class Customer
         this.password=password;
     }
 
+    /**
+     * Ini adalah method accessor untuk mendapatkan nilai id customer
+     * @return id mengembalikan nilai id customer
+     */
     public int getID()
     {
         return id;
     }
+
+    /**
+     * Method ini untuk mendapatkan nama customer
+     * @return nama untuk mengembalikan nilai nama customer
+     */
     public String getNama()
     {
         return nama;
     }
+
+    /**
+     * Method ini untuk mendapatkan email customer
+     * @return email untuk mengembalikan nilai nama customer
+     */
     public String getEmail()
     {
         return email;
     }
-    
+
+    /**
+     * Method ini untuk mendapatkan dob customer
+     * @return dob untuk mengembalikan nilai dob customer
+     */
     public Date getDOB()
     {
-        //DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
-        //String output = formatter.format(dob);
-        //System.out.print(output);
         return dob;
     }
+
+    /**
+     * Method ini untuk mendapatkan password customer
+     * @return password untuk mengembalikan nilai password customer
+     */
     public String getPassword(){
         return password;
     }
+
+    /**
+     * Method ini digunakan untuk mengeset nilai id customer
+     * @param id untuk menerima passing niilai id.
+     */
     public void setID(int id)
     {
         this.id=id;  
     }
-    
+
+    /**
+     * Method ini digunakan untuk mengeset nama customer
+     * @param nama adalah parameter untuk menerima nama customer
+     */
     public void setNama(String nama)
     {
         this.nama=nama;  
     }
-    
+
+    /**
+     * Method ini digunakan untuk mengeset email dengan ketentuan sesuai regex
+     * @param email adalah parameter untuk menerima email customer
+     */
     public void setEmail(String email)
     {
                
@@ -96,13 +140,27 @@ public class Customer
         }
        
     }
+
+    /**
+     * Method ini digunakan untuk mengeset dob customer
+     * @param dob adalah parameter untuk menerima dob customer
+     */
     public void setDOB(Date dob)
     {   
         this.dob=dob;
     }
+
+    /**
+     * Method ini digunakan untuk mengeset password customer
+     * @param password adalah parameter untuk menerima password customer
+     */
     public void setPassword(String password){
         this.password=password;
     }
+
+    /**
+     * Method ini digunakan untuk menampilkan data dalam object maupun variable dalam bentuk String
+     */
     public String toString()
     {
             if (DatabasePesanan.getPesananAktif(this)!=null)
@@ -115,20 +173,14 @@ public class Customer
             }
             else
             {
-             return"\nCustomer ID       : "+getID()+
+             return"\nCustomer ID        : "+getID()+
                     "\nNama              : "+getNama()+
                     "\nEmail             : "+getEmail()+
+                    "\nPassword          : "+password+
                     "\nDate of Birth     : "+dobformat.format(getDOB())+
-                    "\nBooking sedang dalam proses";
+                    "\n";
             }
     }
-    /*
-    public void printData()
-    {
-        System.out.println("Customer");
-        System.out.println("ID :" + id);
-        System.out.println("Nama :" + nama);
-    }
-    */
+
     
 }
