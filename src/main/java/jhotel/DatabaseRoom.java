@@ -14,11 +14,20 @@ public class DatabaseRoom
     // instance variables - replace the example below with your own
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
+    /**
+     * membuat arraylist berisi room
+     *
+     * @return ROOM_DATABASE
+     */
     public static ArrayList<Room> getRoomDatabase()
     {
         return ROOM_DATABASE;
     }
 
+    /**
+     * menambahkan database room
+     * @param baru berisi objek Room
+     */
     public static boolean addRoom (Room baru) throws RoomSudahAdaException {
 
             for (Room kamar : ROOM_DATABASE) {
@@ -30,8 +39,6 @@ public class DatabaseRoom
 
             ROOM_DATABASE.add(baru);
             return true;
-
-
     }
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {

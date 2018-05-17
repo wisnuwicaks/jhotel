@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.GregorianCalendar;
 @RestController
+
+/**
+ * Kelas ini mengatur dari sisi server dan sisi client saat pengambilan data customer.
+ *
+ * @author Wisnu Wicaksono
+ * @version 15/05/2018
+ */
 public class CustomerController {
 
     @RequestMapping("/")
@@ -12,6 +19,13 @@ public class CustomerController {
         return "Hello " + name;
     }
 
+    /**
+     * method ini mengatur pengambilan data dari server untuk pembuatan customer baru.
+     *
+     * @param name
+     * @param email
+     * @param password
+     */
     @RequestMapping(value ="/newcustomer",method = RequestMethod.POST)
     public Customer newCust(
             @RequestParam(value="name") String name,
@@ -37,10 +51,16 @@ public class CustomerController {
         return customer;
     }
 
+    /**
+     * method ini mengatur login customer.
+     *
+     * @param email
+     * @param password
+     */
     @RequestMapping(value = "/logincust", method = RequestMethod.POST)
     public Customer loginCust(@RequestParam(value="email") String email,
-                              @RequestParam(value="password") String password) {
+                              @RequestParam(value="password") String password)
+    {
         return DatabaseCustomer.getCustomerLogin(email, password);
-
     }
 }

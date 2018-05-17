@@ -50,7 +50,7 @@ public class JHotel
         try
         {
             DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S103"));
-            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S102"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S102"));
             DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S101"));
         }
         catch(RoomSudahAdaException e)

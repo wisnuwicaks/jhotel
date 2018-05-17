@@ -14,16 +14,31 @@ import java.util.ArrayList;
         private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
         private static int LAST_CUSTOMER_ID = 0;
 
+        /**
+         * method untuk membuat arraylist berisi customer
+         *
+         * @return CUSTOMER_DATABASE
+         */
         public static ArrayList<Customer> getCustomerDatabase()
         {
             return CUSTOMER_DATABASE;
         }
 
+        /**
+         * untuk mendapatkan ID dari customer terakhir
+         *
+         * @return LAST_CUSTOMER_ID
+         */
         public static int getLastCustomerID()
         {
             return LAST_CUSTOMER_ID;
         }
 
+        /**
+         * untuk menambahkan data customer.
+         *
+         * @return true
+         */
         public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
         {
             for(Customer pelanggan : CUSTOMER_DATABASE)
@@ -32,7 +47,7 @@ import java.util.ArrayList;
                         pelanggan.getEmail().equals(baru.getEmail()))
                 {
                     throw new PelangganSudahAdaException(pelanggan);
-                    //return false;
+
                 }
             }
             CUSTOMER_DATABASE.add(baru);
@@ -40,6 +55,13 @@ import java.util.ArrayList;
             return true;
         }
 
+        /**
+         * untuk mendapatkan customer dengan id yang ditentukan
+         *
+         * @param id menentukan id customer
+         * @return cust mengembalikan nilai customer jika memenuhi syarat
+         * @return null jika nilai yang diambil dari array tidak memenuhi kondisi
+         */
         public static Customer getCustomer(int id)
         {
             for (Customer cust : CUSTOMER_DATABASE)
@@ -51,6 +73,15 @@ import java.util.ArrayList;
             }
             return null;
         }
+
+        /**
+         * untuk mendapatkan customer yang login menggunakan email dan passwordnya.
+         *
+         * @param email menentukan nilai email
+         * @param password menentukan nilai password
+         * @return cust mengembalikan nilai customer jika memenuhi syarat
+         * @return null jika nilai yang diambil dari arraylist tidak memenuhi kondisi
+         */
         public static Customer getCustomerLogin(String email, String password){
             for(Customer cust : CUSTOMER_DATABASE){
                 if (cust.getEmail().equals(email) && cust.getPassword().equals(password))
@@ -61,6 +92,11 @@ import java.util.ArrayList;
             return null;
         }
 
+        /**
+         * untuk menghapus data customer.
+         *
+         * @return true
+         */
         public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {
             for(Customer pelanggan : CUSTOMER_DATABASE)

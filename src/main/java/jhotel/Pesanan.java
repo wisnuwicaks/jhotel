@@ -39,8 +39,7 @@ public class Pesanan
         isAktif=true;
         tanggalPesan = new Date();
         this.id= DatabasePesanan.getLastPesananID() + 1;
-        //tanggalPesan = new Date(tahun,bulan,hari);
-        //this.biaya=(kamar.getDailyTariff())*jumlahHari;
+
     }
 
     /*

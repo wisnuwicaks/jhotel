@@ -14,14 +14,28 @@ public class DatabaseHotel
     private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
     private static int LAST_HOTEL_ID = 0;
 
+    /**
+     * method untuk membuat arraylist berisi hotel
+     * @return HOTEL_DATABASE
+     */
     public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;
     }
+
+    /**
+     * untuk mendapatkan ID dari hotel terakhir
+     * @return LAST_HOTEL_ID
+     */
     public static int getLastHotelID()
     {
         return LAST_HOTEL_ID;
     }
+
+    /**
+     * untuk menambahkan data hotel.
+     * @return true
+     */
     public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
         for(Hotel cari : HOTEL_DATABASE){
@@ -36,20 +50,30 @@ public class DatabaseHotel
         return true;
     }
 
+    /**
+     * untuk mendapatkan hotel dengan id yang ditentukan
+     * @param id menerima passing nilai id hotel berupa integer
+     * @return hotel bila memenuhi kondisi
+     * @return null bila tidak memenuhi kondisi
+     */
     public static Hotel getHotel(int id)
     {
-        for(Hotel cari : HOTEL_DATABASE)
+        for(Hotel hotel : HOTEL_DATABASE)
         {
-            if(cari.getID() == id)
+            if(hotel.getID() == id)
             {
-                return cari;
+                return hotel;
             }
         }
 
         return  null;
     }
 
-    
+    /**
+     * untuk menghapus data hotel.
+     *
+     * @return true
+     */
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException
     {
         for(Hotel cari1 : HOTEL_DATABASE){

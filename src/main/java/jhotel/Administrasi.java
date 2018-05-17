@@ -34,19 +34,6 @@ public class Administrasi
         }
     }
 
-    /*
-    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.BOOKED);
-    }
-
-
-    public static void roomLepasPesanan(Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.VACANT);
-    }
-    /*
-
     /**
      * method ini digunakan untuk membatalkan suatu pesanan
      * @param kamar parameter untuk menerima object Room dan membuat room menjadi vacant
